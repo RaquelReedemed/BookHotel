@@ -1,0 +1,164 @@
+@import url("https://fonts.googleapis.com/css2?family=Cookie&family=Dancing+Script:wght@400;500;700&family=Great+Vibes&family=Open+Sans:wght@600&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Cookie&family=Dancing+Script:wght@400;500;700&family=Great+Vibes&family=PT+Serif:ital,wght@0,700;1,400&display=swap");
+/* font-family: 'Cookie', cursive;
+font-family: 'Dancing Script', cursive;
+font-family: 'Great Vibes', cursive;
+font-family: 'Open Sans', sans-serif; */
+/* font-family: 'Cookie', cursive;
+font-family: 'Dancing Script', cursive;
+font-family: 'Great Vibes', cursive;
+font-family: 'PT Serif', serif; */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body,
+html {
+  width: 100%;
+  height: 100%;
+}
+
+body, p {
+  color: #666a72;
+  font: 400 1rem/1.75rem "Open Sans", sans-serif;
+}
+
+h1 {
+  color: #363a40;
+  font: italic 700 2.5rem/3.25rem "PT Serif", serif;
+}
+
+h2 {
+  color: #363a40;
+  font: italic 700 2.375rem/3.125rem "PT Serif", serif;
+}
+
+h3 {
+  color: #363a40;
+  font: italic 700 1.5rem/2.25rem "PT Serif", serif;
+}
+
+h4 {
+  color: #363a40;
+  font: italic 700 1.25rem/1.75rem "PT Serif", serif;
+}
+
+h5 {
+  color: #363a40;
+  font: italic 700 1.125rem/1.625rem "PT Serif", serif;
+}
+
+h6 {
+  color: #363a40;
+  font: italic 700 1rem/1.5rem "PT Serif", serif;
+}
+
+li {
+  list-style: none;
+}
+
+a {
+  color: #666a72;
+  text-decoration: underline;
+}
+
+a:hover {
+  color: #666a72;
+  text-decoration: underline;
+}
+
+.nav {
+  font-size: 0.875rem;
+  line-height: 0.875rem;
+  background-color: #ffffff;
+  box-shadow: 0 0.0625rem 0.375rem 0 rgba(0, 0, 0, 0.1019607843);
+  padding: 1rem 5rem;
+  display: flex;
+  justify-content: space-between;
+}
+
+.nav .nav_logo img {
+  width: 76px;
+  height: 28px;
+}
+
+.nav .nav_ul {
+  margin-top: 0.75rem;
+  margin-bottom: 0.5rem;
+  display: flex;
+  align-items: center;
+}
+
+.nav .nav_ul li {
+  padding-left: 20px;
+}
+
+.nav .nav_ul li:hover {
+  color: #1ebbce;
+}
+
+/* toggle */
+.nav .dropdown button {
+  background-color: #ffffff;
+  color: #666a72;
+}
+
+/* .btn-success{
+    border-color: #ffffff;
+    line-height: 0px;
+    border-width: 0px; 
+    padding: 0px;
+    font-size: 14px;
+} */
+.btn-success {
+  border-color: beige;
+  line-height: 0px;
+  border-width: 3px;
+  padding: 9px;
+  font-size: 14px;
+}
+
+.btn.show {
+  border-color: beige;
+}
+
+.btn:hover {
+  border-color: beige;
+}
+
+#dropdown-basic:focus {
+  outline: blue !important;
+}
+
+.btn-success:active {
+  color: #666a72;
+  background: #666a72 !important;
+}
+
+/* desplegable */
+.dropdown-menu {
+  border-width: 0px;
+  color: #666a72 !important;
+  font-size: 14px;
+  transform: translate3d(0px, 22px, 0px) !important;
+}
+
+.nav .dropdown-item {
+  color: #666a72;
+  text-decoration: none;
+  padding-top: 0.5rem;
+  padding-bottom: 0.5rem;
+}
+
+.nav .dropdown-toggle:hover {
+  color: #1ebbce;
+}
+
+.nav .dropdown-item:hover {
+  background-color: #ffffff;
+  color: #1ebbce;
+}
+
+/*# sourceMappingURL=style.css.map */

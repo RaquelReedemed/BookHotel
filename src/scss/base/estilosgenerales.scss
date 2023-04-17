@@ -1,0 +1,77 @@
+@import url('https://fonts.googleapis.com/css2?family=Cookie&family=Dancing+Script:wght@400;500;700&family=Great+Vibes&family=Open+Sans:wght@600&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Cookie&family=Dancing+Script:wght@400;500;700&family=Great+Vibes&family=PT+Serif:ital,wght@0,700;1,400&display=swap');
+
+
+/* font-family: 'Cookie', cursive;
+font-family: 'Dancing Script', cursive;
+font-family: 'Great Vibes', cursive;
+font-family: 'Open Sans', sans-serif; */
+
+/* font-family: 'Cookie', cursive;
+font-family: 'Dancing Script', cursive;
+font-family: 'Great Vibes', cursive;
+font-family: 'PT Serif', serif; */
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body,
+html {
+    width: 100%;
+    height: 100%;
+}
+
+body, p {
+    color:#666a72 ;
+    font: 400 1rem/1.75rem 'Open Sans', sans-serif;
+}
+
+h1{
+    color: #363a40;
+    font: italic 700 2.5rem/3.25rem 'PT Serif', serif;
+}
+
+h2{
+    color: #363a40;
+    font: italic 700 2.375rem/3.125rem 'PT Serif', serif;
+}
+
+h3{
+    color: #363a40;
+    font: italic 700 1.5rem/2.25rem 'PT Serif', serif;
+}
+
+h4{
+    color: #363a40;
+    font: italic 700 1.25rem/1.75rem 'PT Serif', serif;
+}
+
+h5{
+    color: #363a40;
+    font: italic 700 1.125rem/1.625rem 'PT Serif', serif;
+}
+
+h6{
+    color: #363a40;
+    font: italic 700 1rem/1.5rem 'PT Serif', serif;
+}
+
+li{
+    list-style: none;
+}
+
+a{
+    color: #666a72;
+    text-decoration: underline;
+}
+
+
+
+a:hover{
+    color: #666a72;
+    text-decoration: underline;
+}
+
