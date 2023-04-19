@@ -7,6 +7,9 @@
     padding: 1rem 5rem;
     display: flex;
     justify-content: space-between;
+    position: fixed;  //fijar la barra de navegacion
+    top: 0;//fijar la barra de navegacion
+    width: 100%;//fijar la barra de navegacion
 }
 
 .nav .nav_logo img {

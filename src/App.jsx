@@ -4,6 +4,7 @@ import viteLogo from '/vite.svg' */
 
 
 import { Navbar } from "./components/Navbar"
+import { Slider } from "./components/Slider"
 
 
 function App() {
@@ -12,6 +13,7 @@ function App() {
   return (
     <div>
       <Navbar></Navbar>
+      <Slider></Slider>
     </div>
   )
 }
