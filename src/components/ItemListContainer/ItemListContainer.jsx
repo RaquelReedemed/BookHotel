@@ -15,6 +15,9 @@ import { useState, useEffect } from "react";
 import { pedirDatos } from "../../helpers/pedirDatos";
 import ItemList from "../ItemList/ItemList";
 
+import LoaderDisenio from "../../components/Loader/LoaderDisenio"
+import Loader from "../Loader/Loader";
+
 
 
 
@@ -77,13 +80,16 @@ export const ItemListContainer = () => {
         </div>
         {/* fin encabezadoItem */}
       </div>
+
+      <div>
       {
         loading
-        ? <h2>Cargando...</h2>
+        ? 
+        <Loader cargando={LoaderDisenio}/>
         :
         <ItemList items={productos}/>
       }
-
+      </div>
       
       
       {/* fin grid-container */}
