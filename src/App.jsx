@@ -3,17 +3,18 @@ import reactLogo from './assets/react.svg'
 import viteLogo from '/vite.svg' */
 
 
-import { Navbar } from "./components/Navbar"
-import { Slider } from "./components/Slider"
+import { ItemListContainer } from "./components/ItemListContainer/ItemListContainer"
+import { Navbar } from "./components/Navbar/Navbar"
+import { Slider } from "./components/Slider/Slider"
 
 
 function App() {
  
-
   return (
     <div>
       <Navbar></Navbar>
       <Slider></Slider>
+      <ItemListContainer></ItemListContainer>
     </div>
   )
 }

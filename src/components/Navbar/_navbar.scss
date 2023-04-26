@@ -10,6 +10,9 @@
     position: fixed;  //fijar la barra de navegacion
     top: 0;//fijar la barra de navegacion
     width: 100%;//fijar la barra de navegacion
+    position: sticky;
+    top: 0;
+    z-index: 100;
 }
 
 .nav .nav_logo img {

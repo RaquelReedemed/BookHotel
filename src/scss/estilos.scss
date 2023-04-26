@@ -1,4 +1,7 @@
-@import './base/estilosgenerales.scss';
+@import '../scss/base/estilosgenerales';
 
-@import './navbar';
-@import './slider';
+@import '../components/Navbar/navbar';
+@import '../components/Slider/slider';
+@import '../components/CartWidget/cartwidget';
+
+@import '../scss/itemListContainer';
