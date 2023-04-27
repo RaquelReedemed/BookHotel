@@ -17,31 +17,19 @@ import ItemList from "../ItemList/ItemList";
 
 import LoaderDisenio from "../../components/Loader/LoaderDisenio"
 import Loader from "../Loader/Loader";
+import { useProductos } from "../../hooks/useProductos";
 
 
 
 
 export const ItemListContainer = () => {
-  const [productos, setProductos] = useState([]);
-  const [loading, setloading] = useState(true);
-  console.log(productos);
 
-     useEffect(() => {
-     
-      setloading(true)
+ /*  const hook = useProductos()
+  console.log(hook) */
 
-    pedirDatos()
-     .then((res) => {
-      setProductos(res)
-      setloading(false)
-     })
-     .catch((error) => {
-      console.log(error)
-      setloading(false)
-     })
-  }, []); 
+  /* Desestructurando */
 
-
+  const { loading, productos } = useProductos()
 
   return (
     <div className="lista">
