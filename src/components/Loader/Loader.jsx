@@ -3,8 +3,8 @@
 
 const Loader = ( {cargando} ) => {
     return (
-        <div>
-            <h2>{cargando}</h2>
+        <div className="contLoader">
+            {cargando}
         </div>
     );
 }

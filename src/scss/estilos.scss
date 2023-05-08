@@ -1,7 +1,9 @@
 @import '../scss/base/estilosgenerales';
+@import '../scss/mediasqueries';
 
-@import '../components/Navbar/navbar';
+@import '../scss/navbar';
 @import '../components/Slider/slider';
 @import '../components/CartWidget/cartwidget';
 
 @import '../scss/itemListContainer';
+@import '../scss/loader';

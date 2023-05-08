@@ -3,23 +3,23 @@ const MOCK_DATA = [
       id: 1,
       name: "Habitacion con balcon-economica",
       description:
-        "Our entry level room gives you access to all amenities at a really affordable price",
+        "Disfrute de todas las comodidades en nuestras habitaciones económicas",
       price: 15000,
       img: "https://res.cloudinary.com/da5fzpyjp/image/upload/v1681916253/BookHotel/rooms-balcony-room_gnuy1a.jpg",
     },
     {
       id: 2,
-      name: "Habitacion con balcon-media",
+      name: "Habitacion con balcon-deluxe",
       description:
-        "Our entry level room gives you access to all amenities at a really affordable price",
+        "Ofrecemos habitaciones con acceso a todas las instalaciones del hotel",
       price: 20000,
       img: "https://res.cloudinary.com/da5fzpyjp/image/upload/v1681916240/BookHotel/room-balcony-2_w9y62w.jpg",
     },
     {
       id: 3,
-      name: "Habitacion con balcon-alta",
+      name: "Habitacion con balcon-lujo",
       description:
-        "Our entry level room gives you access to all amenities at a really affordable price",
+        "Experimente la comodidad a un precio asequible en nuestra habitación de nivel alto",
       price: 30000,
       img: "https://res.cloudinary.com/da5fzpyjp/image/upload/v1681916214/BookHotel/description-3_ceguq0.jpg",
     },
@@ -27,23 +27,23 @@ const MOCK_DATA = [
       id: 4,
       name: "Habitacion Panoramica-economica",
       description:
-        "Get the best view to the beautiful sea and the truly splendid Villa surroundings",
+        "Disfruta de la vista más espectacular al mar y los alrededores de la Villa.",
       price: 20000,
       img: "https://res.cloudinary.com/da5fzpyjp/image/upload/v1681916206/BookHotel/description-5_rrz554.jpg",
     },
     {
       id: 5,
-      name: "Habitacion Panoramica-media",
+      name: "Habitacion Panoramica-deluxe",
       description:
-        "Get the best view to the beautiful sea and the truly splendid Villa surroundings",
+        "Contempla la belleza del mar y el entorno de la Villa desde la mejor perspectiva.",
       price: 20000,
       img: "https://res.cloudinary.com/da5fzpyjp/image/upload/v1681916245/BookHotel/room-panoramic-2_llly9n.jpg",
     },
     {
       id: 6,
-      name: "Habitacion Panoramica-alta",
+      name: "Habitacion Panoramica-lujo",
       description:
-        "Get the best view to the beautiful sea and the truly splendid Villa surroundings",
+        "Contempla la belleza del mar y el entorno de la Villa desde la mejor perspectiva.",
       price: 45000,
       img: "https://res.cloudinary.com/da5fzpyjp/image/upload/v1681916247/BookHotel/room-panoramic-3_hjrkcw.jpg",
     },
@@ -51,23 +51,23 @@ const MOCK_DATA = [
       id: 7,
       name: "Habitacion Presidencial-economica",
       description:
-        "Get the best view to the beautiful sea and the truly splendid Villa surroundings",
+        "Disfruta de la más alta calidad y lujo en tus vacaciones.",
       price: 65000,
       img: "https://res.cloudinary.com/da5fzpyjp/image/upload/v1681916251/BookHotel/room-presidential-3_dhmxyv.jpg",
     },
     {
       id: 8,
-      name: "Habitacion Presidencial-media",
+      name: "Habitacion Presidencial-deluxe",
       description:
-        "Get the best view to the beautiful sea and the truly splendid Villa surroundings",
+        "Disfruta de la más lujo calidad y lujo en tus vacaciones.",
       price: 80000,
       img: "https://res.cloudinary.com/da5fzpyjp/image/upload/v1681916251/BookHotel/room-presidential-2_fanobn.jpg",
     },
     {
       id: 9,
-      name: "Habitacion Presidencial-alta",
+      name: "Habitacion Presidencial-lujo",
       description:
-        "Get the best view to the beautiful sea and the truly splendid Villa surroundings",
+        "Disfruta de la más lujo calidad y lujo en tus vacaciones.",
       price: 80000,
       img: "https://res.cloudinary.com/da5fzpyjp/image/upload/v1681916248/BookHotel/room-presidential-1_bshs6s.jpg",
     },

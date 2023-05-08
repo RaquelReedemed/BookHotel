@@ -12,7 +12,7 @@ function App() {
  
   return (
     <div>
-      <Navbar></Navbar>
+     <Navbar></Navbar>
       <Slider></Slider>
       <ItemListContainer></ItemListContainer>
     </div>

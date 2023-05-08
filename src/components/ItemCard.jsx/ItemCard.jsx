@@ -12,9 +12,13 @@ const ItemCard = ( {itemData} ) => {
         <div className="card-body">
           <h3>{itemData.name}</h3>
           <p>{itemData.description}</p>
-          <a href="#"><ShoppingCartIcon/>{itemData.price}</a>
+         
         </div>
-
+        <div className="contNavCart">
+       {/*  <a href="#"><ShoppingCartIcon/>{itemData.price}</a> */}
+       <button>Ver detalles</button> 
+        </div>
+        
       </div>
     
   );
