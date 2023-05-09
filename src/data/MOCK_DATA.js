@@ -5,7 +5,8 @@ const MOCK_DATA = [
       description:
         "Disfrute de todas las comodidades en nuestras habitaciones económicas",
       price: 15000,
-      img: "https://res.cloudinary.com/da5fzpyjp/image/upload/v1681916253/BookHotel/rooms-balcony-room_gnuy1a.jpg",
+       category: "balcon",  
+      img: "https://res.cloudinary.com/da5fzpyjp/image/upload/v1681916253/BookHotel/rooms-balcony-room_gnuy1a.jpg"
     },
     {
       id: 2,
@@ -13,7 +14,8 @@ const MOCK_DATA = [
       description:
         "Ofrecemos habitaciones con acceso a todas las instalaciones del hotel",
       price: 20000,
-      img: "https://res.cloudinary.com/da5fzpyjp/image/upload/v1681916240/BookHotel/room-balcony-2_w9y62w.jpg",
+      category: "balcon",
+      img: "https://res.cloudinary.com/da5fzpyjp/image/upload/v1681916240/BookHotel/room-balcony-2_w9y62w.jpg"
     },
     {
       id: 3,
@@ -21,7 +23,8 @@ const MOCK_DATA = [
       description:
         "Experimente la comodidad a un precio asequible en nuestra habitación de nivel alto",
       price: 30000,
-      img: "https://res.cloudinary.com/da5fzpyjp/image/upload/v1681916214/BookHotel/description-3_ceguq0.jpg",
+      category: "balcon", 
+      img: "https://res.cloudinary.com/da5fzpyjp/image/upload/v1681916214/BookHotel/description-3_ceguq0.jpg"
     },
     {
       id: 4,
@@ -29,7 +32,8 @@ const MOCK_DATA = [
       description:
         "Disfruta de la vista más espectacular al mar y los alrededores de la Villa.",
       price: 20000,
-      img: "https://res.cloudinary.com/da5fzpyjp/image/upload/v1681916206/BookHotel/description-5_rrz554.jpg",
+      category: "panoramica",  
+      img: "https://res.cloudinary.com/da5fzpyjp/image/upload/v1681916206/BookHotel/description-5_rrz554.jpg"
     },
     {
       id: 5,
@@ -37,6 +41,7 @@ const MOCK_DATA = [
       description:
         "Contempla la belleza del mar y el entorno de la Villa desde la mejor perspectiva.",
       price: 20000,
+       category: "panoramica", 
       img: "https://res.cloudinary.com/da5fzpyjp/image/upload/v1681916245/BookHotel/room-panoramic-2_llly9n.jpg",
     },
     {
@@ -45,7 +50,8 @@ const MOCK_DATA = [
       description:
         "Contempla la belleza del mar y el entorno de la Villa desde la mejor perspectiva.",
       price: 45000,
-      img: "https://res.cloudinary.com/da5fzpyjp/image/upload/v1681916247/BookHotel/room-panoramic-3_hjrkcw.jpg",
+      category: "panoramica",  
+      img: "https://res.cloudinary.com/da5fzpyjp/image/upload/v1681916247/BookHotel/room-panoramic-3_hjrkcw.jpg"
     },
     {
       id: 7,
@@ -53,7 +59,8 @@ const MOCK_DATA = [
       description:
         "Disfruta de la más alta calidad y lujo en tus vacaciones.",
       price: 65000,
-      img: "https://res.cloudinary.com/da5fzpyjp/image/upload/v1681916251/BookHotel/room-presidential-3_dhmxyv.jpg",
+       category: "presidencial",  
+      img: "https://res.cloudinary.com/da5fzpyjp/image/upload/v1681916251/BookHotel/room-presidential-3_dhmxyv.jpg"
     },
     {
       id: 8,
@@ -61,7 +68,8 @@ const MOCK_DATA = [
       description:
         "Disfruta de la más lujo calidad y lujo en tus vacaciones.",
       price: 80000,
-      img: "https://res.cloudinary.com/da5fzpyjp/image/upload/v1681916251/BookHotel/room-presidential-2_fanobn.jpg",
+        category: "presidencial",  
+      img: "https://res.cloudinary.com/da5fzpyjp/image/upload/v1681916251/BookHotel/room-presidential-2_fanobn.jpg"
     },
     {
       id: 9,
@@ -69,7 +77,8 @@ const MOCK_DATA = [
       description:
         "Disfruta de la más lujo calidad y lujo en tus vacaciones.",
       price: 80000,
-      img: "https://res.cloudinary.com/da5fzpyjp/image/upload/v1681916248/BookHotel/room-presidential-1_bshs6s.jpg",
+       category: "presidencial", 
+      img: "https://res.cloudinary.com/da5fzpyjp/image/upload/v1681916248/BookHotel/room-presidential-1_bshs6s.jpg"
     },
   ];
 

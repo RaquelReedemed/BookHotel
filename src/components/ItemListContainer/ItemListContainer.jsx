@@ -17,7 +17,8 @@ import ItemList from "../ItemList/ItemList";
 
 import LoaderDisenio from "../../components/Loader/LoaderDisenio"
 import Loader from "../Loader/Loader";
-import { useProductos } from "../../hooks/useProductos";
+/* import { useProductos } from "../../hooks/useProductos"; */
+import { useParams } from "react-router-dom";
 
 
 
@@ -29,7 +30,32 @@ export const ItemListContainer = () => {
 
   /* Desestructurando */
 
-  const { loading, productos } = useProductos()
+/*   const { loading, productos } = useProductos() */
+
+
+
+  const [productos, setProductos] = useState([]);
+  const [loading, setloading] = useState(true);
+  console.log(productos);
+
+  const { categoryId } = useParams()
+  console.log(categoryId)
+
+     useEffect(() => {
+      setloading(true)
+
+    pedirDatos()
+     .then((res) => {
+      setProductos(res)
+      setloading(false)
+     })
+     .catch((error) => {
+      console.log(error)
+      setloading(false)
+     })
+  }, []); 
+
+
 
   return (
     <div className="lista">
