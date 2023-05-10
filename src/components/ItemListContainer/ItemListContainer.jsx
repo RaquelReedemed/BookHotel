@@ -45,15 +45,21 @@ export const ItemListContainer = () => {
       setloading(true)
 
     pedirDatos()
-     .then((res) => {
-      setProductos(res)
+     .then((data) => {
+        if (!categoryId) {
+          setProductos(data)
+        } else{
+           setProductos(data.filter((el) => el.category === categoryId ))
+        }
+
+      /* setProductos(res) */
       setloading(false)
      })
      .catch((error) => {
       console.log(error)
       setloading(false)
      })
-  }, []); 
+  }, [categoryId]); 
 
 
 

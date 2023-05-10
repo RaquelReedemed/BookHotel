@@ -1,10 +1,10 @@
-import ShoppingCartIcon from "@mui/icons-material/ShoppingCart";
-import { Link } from "react-router-dom";
 
-const ItemCard = ( {itemData} ) => {
+
+import React from 'react'
+
+const ItemDetail = ({itemData}) => {
   return (
-    
-      <div className="card">
+    <div className="card">
 
         <div className="card-image">
           <img className="img-fluid" src={itemData.img}></img>
@@ -17,12 +17,11 @@ const ItemCard = ( {itemData} ) => {
         </div>
         <div className="contNavCart">
        {/*  <a href="#"><ShoppingCartIcon/>{itemData.price}</a> */}
-       <Link to={`/detail/${itemData.id}`} >Ver detalles</Link> 
+       <button>Agregar al carrito</button> 
         </div>
         
       </div>
-    
-  );
-};
+  )
+}
 
-export default ItemCard;
+export default ItemDetail

@@ -1,11 +1,12 @@
 
 import { Navbar } from "./components/Navbar/Navbar"
 import { Inicio } from "./components/Inicio"
-import { Balcon } from "./components/Balcon" 
-import { Presidenciales } from "./components/Presidenciales"
-import { Panoramicas } from "./components/Panoramicas"
+
+
 import { BrowserRouter, Routes, Route, Navigate } from "react-router-dom"
 import { ItemListContainer } from "./components/ItemListContainer/ItemListContainer"
+import ItemDetailContainer from "./components/ItemDetailContainer/ItemDetailContainer"
+import Error404 from "./components/Error404"
 
 function App() {
  
@@ -18,11 +19,11 @@ function App() {
       <Routes>
       <Route path="/" element={<Inicio/>}/>
       <Route path="/habitaciones/:categoryId" element={<ItemListContainer/>}/>
-      <Route path="/balcon" element={<Balcon/>}/>
-      <Route path="/panoramicas" element={<Panoramicas/>}/>
-      <Route path="/presidenciales" element={<Presidenciales/>}/> 
+      <Route path="detail/:itemId" element={<ItemDetailContainer/>}/>
 
-      <Route path="*" element={<Navigate to={"/"}/>}/>
+      {/* <Route path="*" element={<Navigate to={"/"}/>}/> */}
+      <Route path="*" element={<Error404/>}></Route>
+
      </Routes> 
 
      {/* otra manera de hacer ruta independiente para cada pagina */}
@@ -35,8 +36,7 @@ function App() {
 
     </BrowserRouter>
     
-     
-   
+
   )
 }
 
