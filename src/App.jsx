@@ -6,7 +6,7 @@ import { Inicio } from "./components/Inicio"
 import { BrowserRouter, Routes, Route, Navigate } from "react-router-dom"
 import { ItemListContainer } from "./components/ItemListContainer/ItemListContainer"
 import ItemDetailContainer from "./components/ItemDetailContainer/ItemDetailContainer"
-import Error404 from "./components/Error404"
+import Error404 from "./components/Error404/Error404"
 
 function App() {
  

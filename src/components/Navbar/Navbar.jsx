@@ -43,7 +43,76 @@ export const Navbar = () => {
         </li>
       </ul>
 
-      {/*    <div className="dropdown">
+    
+
+      <ul className="nav_ul">
+        <li className="nav_item">Contactanos</li>
+        <li className="cart">
+          <CartWidget />
+        </li>
+        <li className="icon_toggle">
+          <a className="icon_toggle-mobile">
+            <FontAwesomeIcon icon={faBars} />
+          </a>
+        </li>
+      </ul>
+
+      {/* version mobile */}
+      {/* ocultar en desktop */}
+
+      <div className="nav_mobile">
+        <li  className="nav_logo-mobile">
+        <Link to="./"><img src={logo} alt="logo"></img></Link>
+        <Link to="/"> <p>Inicio</p></Link>
+        </li>
+
+        <div className="cont_icons-mobile">
+          <li className="cart-mobile">
+            <CartWidget />
+          </li>
+          <li onClick={navHamb} className="icon_toggle-mobile">
+            <a>
+              <FontAwesomeIcon icon={faBars} />
+            </a>
+          </li>
+        </div>
+      </div>
+
+      {/*className="nav_collapse"  */}
+      <div className={active}>
+        <ul>
+
+          <li onClick={navHamb}>
+          <Link to="/habitaciones/balcon">Balcon</Link>
+          </li>
+
+          <li onClick={navHamb}>
+          <Link to="/habitaciones/panoramica">Panoramica</Link>
+        </li>
+         
+          <li onClick={navHamb}>
+          <Link to="/habitaciones/presidencial">Presidencial</Link>
+          </li>
+
+          <li onClick={navHamb}>
+          <Link to="/"> Contactanos</Link>
+          </li>
+        </ul>
+      </div>
+    </nav>
+  );
+};
+
+library.add(faBars);
+
+{
+  /*  <li className='nav_item'>Habitaciones con Balcon</li>
+                <li className='nav_item'>Habitaciones Panoramicas</li>
+                <li className='nav_item'>Habitaciones Presidenciales</li> */
+}
+
+
+  {/*    <div className="dropdown">
             <ul>
               <li>
                 Habitaciones
@@ -73,73 +142,3 @@ export const Navbar = () => {
        <Dropdown.Item href="#/action-3">Presidencial</Dropdown.Item> 
       </Dropdown.Menu>
     </Dropdown>   */}
-
-      <ul className="nav_ul">
-        <li className="nav_item">Contactanos</li>
-        <li className="cart">
-          <CartWidget />
-        </li>
-        <li className="icon_toggle">
-          <a className="icon_toggle-mobile">
-            <FontAwesomeIcon icon={faBars} />
-          </a>
-        </li>
-      </ul>
-
-      {/* version mobile */}
-      {/* ocultar en desktop */}
-
-      <div className="nav_mobile">
-        <li className="nav_logo-mobile">
-          <img src={logo} alt="logo"></img>
-          <p>Inicio</p>
-        </li>
-
-        <div className="cont_icons-mobile">
-          <li className="cart-mobile">
-            <CartWidget />
-          </li>
-          <li onClick={navHamb} className="icon_toggle-mobile">
-            <a>
-              <FontAwesomeIcon icon={faBars} />
-            </a>
-          </li>
-        </div>
-      </div>
-
-      {/*className="nav_collapse"  */}
-      <div className={active}>
-        <ul>
-          <li>
-            <a href="#" className="nav-link">
-              Habitaciones con Balcon
-            </a>
-          </li>
-          <li>
-            <a href="#" className="nav-link">
-              Habitaciones Panoramicas
-            </a>
-          </li>
-          <li>
-            <a href="#" className="nav-link">
-              Habitaciones Presidenciales
-            </a>
-          </li>
-          <li>
-            <a href="#" className="nav-link">
-              Contactanos
-            </a>
-          </li>
-        </ul>
-      </div>
-    </nav>
-  );
-};
-
-library.add(faBars);
-
-{
-  /*  <li className='nav_item'>Habitaciones con Balcon</li>
-                <li className='nav_item'>Habitaciones Panoramicas</li>
-                <li className='nav_item'>Habitaciones Presidenciales</li> */
-}

@@ -35,7 +35,7 @@ export const ItemListContainer = () => {
 
 
   const [productos, setProductos] = useState([]);
-  const [loading, setloading] = useState(true);
+   const [loading, setloading] = useState(true); 
   console.log(productos);
 
   const { categoryId } = useParams()
