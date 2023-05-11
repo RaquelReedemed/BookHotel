@@ -27,7 +27,7 @@ const ItemDetailContainer = () => {
     }, []);
 
   return  (
-    <div className='container my-5'>
+    <div>
          {
             loading
               ? <Loader cargando={LoaderDisenio}/>

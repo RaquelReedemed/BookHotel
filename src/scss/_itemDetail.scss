@@ -1,0 +1,59 @@
+
+.containerTitulo{
+    width: 100%;
+    padding-right: 15px;
+    padding-left: 15px;
+    padding-top: 3rem;
+    padding-bottom: 3rem;
+    
+}
+
+.containerTitulo .green{
+    color: #1ebbce;
+    margin-bottom: 0.5rem;
+    display: flex;
+}
+
+
+.containerImagen{
+    width: 100%;
+    padding-left: 15px;
+    padding-right: 15px;
+}
+
+.contenedorDescripcion{
+    margin-top: 5rem;
+    padding-right: 15px;
+    padding-left: 15px;
+}
+
+.contenedorDescripcion h2{
+    color: #363a40;
+    margin-bottom: 1.5rem;
+}
+
+.contenedorDescripcion p{
+    margin-bottom: 3rem;
+    color: #666a72;
+}
+
+.contenedorAmenities {
+    margin-top: 5rem;
+    margin-left: 1rem;
+    margin-right: 1rem;
+}
+
+.contenedorAmenities .listaAmenities li{
+    display: flex;
+    margin-bottom: 2.5rem;
+}
+
+.contenedorAmenities .listaAmenities .svg-inline--fa{
+    font-size: 1rem;
+    color: #1ebbce;
+    line-height: 3rem;
+}
+
+.contenedorAmenities .listaAmenities .listaBody{
+    margin-left: 1rem;
+}

@@ -83,15 +83,15 @@ export const Navbar = () => {
         <ul>
 
           <li onClick={navHamb}>
-          <Link to="/habitaciones/balcon">Balcon</Link>
+          <Link to="/habitaciones/balcon">Habitacion con Balcon</Link>
           </li>
 
           <li onClick={navHamb}>
-          <Link to="/habitaciones/panoramica">Panoramica</Link>
+          <Link to="/habitaciones/panoramica">Habitacion Panoramica</Link>
         </li>
          
           <li onClick={navHamb}>
-          <Link to="/habitaciones/presidencial">Presidencial</Link>
+          <Link to="/habitaciones/presidencial">Habitacion Presidencial</Link>
           </li>
 
           <li onClick={navHamb}>
