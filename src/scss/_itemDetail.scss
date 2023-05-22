@@ -57,3 +57,21 @@
 .contenedorAmenities .listaAmenities .listaBody{
     margin-left: 1rem;
 }
+
+
+/* boton reservar */
+
+.cont-btn-reserva{
+    display: flex;
+    justify-content: center;
+}
+
+.cont-btn-reserva .btn-reservar{
+    display: flex;
+}
+
+.cont-btn-fecha{
+    display: flex;
+    justify-content: space-around;
+    margin-bottom: 100px;
+}

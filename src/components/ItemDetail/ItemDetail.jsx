@@ -1,4 +1,5 @@
 import ShoppingCartIcon from "@mui/icons-material/ShoppingCart";
+import { useContext, useState } from "react";
 
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { library } from "@fortawesome/fontawesome-svg-core";
@@ -13,8 +14,59 @@ import {
 } from "@fortawesome/free-solid-svg-icons";
 
 import React from 'react'
+import { Link } from "react-router-dom";
+import ItemCount from "../ItemCount/ItemCount";
+import SelectFecha from "../SelectFecha.jsx/SelectFecha";
+import { CartContext } from "../../context/CartContext";
+
+
+
+const fechas =[
+  {
+      value: "01/06/2023",
+      label: "01/06/2023"
+     
+  },
+  {
+      value: "04/06/2023",
+      label: "04/06/2023"
+      
+  },
+  {
+      value:"07/06/2023",
+      label: "07/06/2023"
+     
+  }
+
+]
 
 const ItemDetail = ({itemData}) => {
+
+  /* uso del setCart del app.js para poder modificar el estado */
+  const { agregarAlCarrito, isInCart } = useContext(CartContext)
+
+   console.log('item ya esta en el carrito?', isInCart(itemData.id)) 
+
+   const [cantidad, setCantidad] = useState(1);
+   const [fecha, setFecha] = useState(null);
+   console.log(cantidad)
+   console.log(fecha)
+   
+
+   const handleAgregar = () => {
+    /* se crea un nuevo objeto con todas las propiedades de item y una nueva propiedad "cantidad" */
+    const newItem = {
+        ...itemData,
+        cantidad,
+        fecha
+    }
+    agregarAlCarrito(newItem)
+
+    /* const newCart = cart.slice() */ //se crea una copia de cart []
+    /* newCart.push(newItem)  */       //se agrega el nuevo elemento al array vacio
+   /*  setCart( [...cart, newItem] ) */ ///forma mas sencilla
+}
+
   return (
     <div>
 
@@ -32,6 +84,7 @@ const ItemDetail = ({itemData}) => {
     <div className="contenedorDescripcion">
       <h2>Descripcion</h2>
       <p>{itemData.description}</p>
+      <p><strong>Precio: ${itemData.price} P/dia</strong></p>
     </div>
 
     <div className="contenedorAmenities">
@@ -67,11 +120,31 @@ const ItemDetail = ({itemData}) => {
           </div>
         </li>
 
-      </ul>
+      </ul> {/* fin de listaAmenities */}
+    </div> {/* fin de contenedorAmenities */}
 
-    </div>
+      
+       <SelectFecha setFecha={setFecha}
+                    options={fechas}
+       />
+       {
+        isInCart(itemData.id)
+        ?
+        <Link className="btn btn-success" to="/cart">Terminar mi pago</Link>
+        :
+        <ItemCount stock={parseInt(itemData.stock)}
+                  item={itemData}
+                  cantidad={cantidad}
+                  setCantidad={setCantidad}
+                  agregar = {handleAgregar}
+       />
+       }
+          
+       <div className="cont-btn-reserva">
+       <p>SubTotal: {itemData.price * cantidad}</p>
+       </div>
        
-        
+
       </div>
   )
 }
@@ -88,21 +161,3 @@ library.add(
   faWaterLadder
 );
 
-
-
-{/* <div className="card">
-<div className="card-image">
-          <img className="img-fluid" src={itemData.img}></img>
-        </div>
-
-        <div className="card-body">
-          <h3>{itemData.name}</h3>
-          <p>{itemData.description}</p>
-         
-        </div>
-        <div className="contNavCart">
-       <button><ShoppingCartIcon/>{itemData.price}$</button> 
-        </div>
-
-
-</div> */}

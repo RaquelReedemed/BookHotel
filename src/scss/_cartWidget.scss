@@ -1,0 +1,7 @@
+.cart-widget{
+    visibility: hidden; /* mantiene su espacio en el docuemnto a diferencia de display:none */
+}
+
+.cart-widget-active{
+    visibility: visible;
+}

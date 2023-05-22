@@ -1,5 +1,5 @@
 import logo from "../../assets/logo.svg";
-import { useState } from "react";
+import { useContext, useState } from "react";
 import { Link } from "react-router-dom";
 
 import { Dropdown } from "react-bootstrap";
@@ -9,10 +9,18 @@ import { CartWidget } from "../CartWidget/CartWidget";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { library } from "@fortawesome/fontawesome-svg-core";
 import { faBars } from "@fortawesome/free-solid-svg-icons";
+import { DarkModeContext } from "../../context/DarkModeContext";
+import { CartContext } from "../../context/CartContext";
 
 export const Navbar = () => {
   const [active, setActive] = useState("nav_collapse");
   console.log(active);
+
+  /* Modo oscuro */
+  const { darkMode, changeMode } = useContext(DarkModeContext)
+
+  /* Desaparecer carrito cuando este en cero */
+  const { cart } = useContext(CartContext)
 
   const navHamb = () => {
     active === "nav_collapse"
@@ -48,7 +56,11 @@ export const Navbar = () => {
       <ul className="nav_ul">
         <li className="nav_item">Contactanos</li>
         <li className="cart">
-          <CartWidget />
+        {
+          cart.length > 0 && <CartWidget/>
+
+        }
+          
         </li>
         <li className="icon_toggle">
           <a className="icon_toggle-mobile">
@@ -64,6 +76,12 @@ export const Navbar = () => {
         <li  className="nav_logo-mobile">
         <Link to="./"><img src={logo} alt="logo"></img></Link>
         <Link to="/"> <p>Inicio</p></Link>
+        <p>{darkMode 
+             ?
+              'dark'
+             : 'light'
+             }</p>
+             <button onClick={changeMode} >Change</button>
         </li>
 
         <div className="cont_icons-mobile">
@@ -95,7 +113,7 @@ export const Navbar = () => {
           </li>
 
           <li onClick={navHamb}>
-          <Link to="/"> Contactanos</Link>
+          <Link to="/contacto"> Contactanos</Link>
           </li>
         </ul>
       </div>
