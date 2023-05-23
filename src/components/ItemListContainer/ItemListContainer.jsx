@@ -12,13 +12,15 @@ import {
 import { Description } from "@mui/icons-material";
 import { useState, useEffect } from "react";
 
-import { pedirDatos } from "../../helpers/pedirDatos";
+/* import { pedirDatos } from "../../helpers/pedirDatos"; */
 import ItemList from "../ItemList/ItemList";
 
 import LoaderDisenio from "../../components/Loader/LoaderDisenio"
 import Loader from "../Loader/Loader";
 /* import { useProductos } from "../../hooks/useProductos"; */
 import { useParams } from "react-router-dom";
+import { collection, doc, getDocs, query, where } from "firebase/firestore"; /*para armar la referencia, "getDocs" en plural para traer una coleccion  */
+import { db } from "../../firebase/config";
 
 
 
@@ -34,9 +36,9 @@ export const ItemListContainer = () => {
 
 
 
-  const [productos, setProductos] = useState([]);
+   const [productos, setProductos] = useState([]); 
    const [loading, setloading] = useState(true); 
-  console.log(productos);
+   console.log(productos); 
 
   const { categoryId } = useParams()
   console.log(categoryId)
@@ -44,7 +46,33 @@ export const ItemListContainer = () => {
      useEffect(() => {
       setloading(true)
 
-    pedirDatos()
+      //pidiendo datos del firebase
+
+      //1-Armar una referencia (sync), decirle a firebase de donde quiero consumir la db usando { collections }
+      const productosRef = collection(db, "habitaciones")
+      const q = categoryId
+                ? query(productosRef, where("category", "==", categoryId))
+                :
+                productosRef
+     
+      //2-consumir esa referencia (async), decirle que TRAIGA esa coleccion usando getDocs()
+      getDocs(q) //retorna una promesa con el resultado
+        .then((res) => {
+          const docs = res.docs.map((doc) => {
+             return {
+               ...doc.data(),
+               id: doc.id
+             }
+          } )
+          console.log('respuesta', docs)
+          console.log('data', res.docs[0].data())
+          setProductos(docs)
+        })
+        .catch(e => console.log(e))
+        .finally(() => setloading(false))
+
+
+     /* pedirDatos()
      .then((data) => {
         if (!categoryId) {
           setProductos(data)
@@ -52,14 +80,14 @@ export const ItemListContainer = () => {
            setProductos(data.filter((el) => el.category === categoryId ))
         }
 
-      /* setProductos(res) */
+      
       setloading(false)
      })
      .catch((error) => {
       console.log(error)
       setloading(false)
-     })
-  }, [categoryId]); 
+     }) */
+  }, [categoryId]);  
 
 
 
@@ -102,13 +130,13 @@ export const ItemListContainer = () => {
       </div>
 
       <div>
-      {
+       {
         loading
         ? 
         <Loader cargando={LoaderDisenio}/>
         :
         <ItemList items={productos}/>
-      }
+      } 
       </div>
       
       
