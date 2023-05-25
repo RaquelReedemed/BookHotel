@@ -2,7 +2,7 @@ import logo from "../../assets/logo.svg";
 import { useContext, useState } from "react";
 import { Link } from "react-router-dom";
 
-import { Dropdown } from "react-bootstrap";
+import { Button, Dropdown } from "react-bootstrap";
 
 import { CartWidget } from "../CartWidget/CartWidget";
 
@@ -11,6 +11,7 @@ import { library } from "@fortawesome/fontawesome-svg-core";
 import { faBars } from "@fortawesome/free-solid-svg-icons";
 import { DarkModeContext } from "../../context/DarkModeContext";
 import { CartContext } from "../../context/CartContext";
+import { AuthContext } from "../../context/AuthContext";
 
 export const Navbar = () => {
   const [active, setActive] = useState("nav_collapse");
@@ -21,6 +22,10 @@ export const Navbar = () => {
 
   /* Desaparecer carrito cuando este en cero */
   const { cart } = useContext(CartContext)
+
+  /* logueado */
+  const { user, logout } = useContext(AuthContext)
+  console.log('logout',logout)
 
   const navHamb = () => {
     active === "nav_collapse"
@@ -62,6 +67,10 @@ export const Navbar = () => {
         }
           
         </li>
+        <li>
+          {/*   <p>Bienvenido {user.email}</p> */}
+            <button className="btn btn-danger" onClick={logout}>Logout</button>
+          </li>
         <li className="icon_toggle">
           <a className="icon_toggle-mobile">
             <FontAwesomeIcon icon={faBars} />
@@ -114,6 +123,11 @@ export const Navbar = () => {
 
           <li onClick={navHamb}>
           <Link to="/contacto"> Contactanos</Link>
+          </li>
+
+          <li>
+            <p>Bienvenido {user.email}</p>
+            <button className="btn btn-danger" onClick={logout}>Logout</button>
           </li>
         </ul>
       </div>

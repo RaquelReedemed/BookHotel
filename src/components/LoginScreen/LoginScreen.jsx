@@ -6,7 +6,7 @@ import { AuthContext } from '../../context/AuthContext';
 
 const LoginScreen = () => {
   
-   const { login } = useContext(AuthContext)
+   const { login, loginWithGoogle } = useContext(AuthContext)
 
     const [values, setValues] = useState({
         email: "",
@@ -56,6 +56,8 @@ const LoginScreen = () => {
                 <button className="btn btn-primary" type="submit">Login</button>
                 <Link to="/register">Registrarme</Link>
             </form>
+                <button className="btn btn-primary" type="submit" onClick={loginWithGoogle}>Ingresar con Google</button>
+
          </div>    
         </div>
     );

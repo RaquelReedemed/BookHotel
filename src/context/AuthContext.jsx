@@ -1,7 +1,7 @@
 import { createContext } from "react";
-import { useState } from "react";
-import { createUserWithEmailAndPassword, signInWithEmailAndPassword } from "firebase/auth";
-import { auth } from "../firebase/config";
+import { useState, useEffect } from "react";
+import { signInWithPopup, createUserWithEmailAndPassword, signInWithEmailAndPassword, onAuthStateChanged, signOut } from "firebase/auth";
+import { auth, proviver } from "../firebase/config";
 
 
 export const AuthContext = createContext()
@@ -21,27 +21,28 @@ export const AuthProvider = ({children}) => {
    console.log(user)
 
    const login = (values) => {
-    /* if (values.email === mock.email && values.password === mock.password) {
-      setUser({
-         email: values.email,
-         logged: true
-      })
-    } */
-
     signInWithEmailAndPassword(auth, values.email, values.password)
-       .then((userCredential) => {
+      .catch(e => console.log(e))
+      /*  .then((userCredential) => {
            const { user } = userCredential
 
            setUser({
             email: user.email,
             logged: true
            })
+       }) */
+ }  
+   const loginWithGoogle = () => {
+       signInWithPopup(auth, proviver)
+       .then((result) => {
+         console.log(result)
        })
- }
+   }
 
    const register = (values) => {
      createUserWithEmailAndPassword(auth, values.email, values.password)
-      .then((userCredential) => {
+     .catch(e => console.log(e))
+      /* .then((userCredential) => {
         console.log(userCredential)
        
         const { user } = userCredential
@@ -49,15 +50,45 @@ export const AuthProvider = ({children}) => {
             email: user.email,
             logged: true
         })
-      })
-      .catch(e => console.log(e))
+      }) */
+     
    }
+
+   const logout = () => {
+      signOut(auth)
+       /* setUser({
+        email: null,
+        logged: false
+       }) */
+   }
+
+
+   /* el montaje escucha los cambios de estado de la autentificacion, sobre quien esta logueado, quien se deslogeo  */
+   useEffect(() => {
+    onAuthStateChanged(auth, (user) => {
+        console.log('usuario logueado', user)
+        if (user) {
+            setUser({
+                email: user.email,
+                logged: true
+            })
+        }else{
+            setUser({
+                email: null,
+                logged: false
+            })
+        }
+    })
+
+   }, []);
 
     return(
         <AuthContext.Provider value={{
             user,
             login,
-            register
+            register,
+            logout,
+            loginWithGoogle
         }}>
            {children} 
         </AuthContext.Provider>
