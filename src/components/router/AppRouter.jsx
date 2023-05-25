@@ -12,6 +12,7 @@ import RegisterScreen from '../LoginScreen/RegisterScreen';
 import { Inicio } from '../Inicio';
 import Contacto from '../Contacto/Contacto';
 import Cart from '../Cart/Cart';
+import Checkout from '../Checkout/Checkout';
 
 const AppRouter = () => {
 
@@ -30,6 +31,7 @@ const AppRouter = () => {
       <Route path="/habitaciones/:categoryId" element={<ItemListContainer/>}/>
       <Route path="detail/:itemId" element={<ItemDetailContainer/>}/>
       <Route path="/cart" element={<Cart/>}/>
+      <Route path='/checkout' element={<Checkout/>}/>
       <Route path="/contacto" element={<Contacto/>}/>
       <Route path="*" element={<Error404/>}></Route>
      </Routes>
@@ -46,6 +48,7 @@ const AppRouter = () => {
     );
 
 }
+
 
 
 {/* <>
