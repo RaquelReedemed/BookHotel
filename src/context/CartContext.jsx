@@ -26,9 +26,10 @@ export const CartProvider = ({children}) => {
      //por cada item que voy recorriendo en el acumulador se sume la cantidad y cero es el valor inicial
     }
 
+    
     /* total de la compra */
     const totalCarrito = () => {
-        return cart.reduce((acc, item) => acc + item.cantidad * item.price, 0)
+        return cart.reduce((acc, item) => acc + item.totalFinal, 0)
     }
 
     /* eliminar item de carrito */

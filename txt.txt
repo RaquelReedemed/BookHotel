@@ -15,3 +15,17 @@ export const CartWidget = () => {
         </Link>
     )
 }
+
+
+const MOCK_DATA = [
+  {
+    id: 1,
+    name: "Habitacion con balcon-standar",
+    description:
+      "Disfrute de todas las comodidades en nuestras habitaciones económicas",
+    price: 15000,
+    category: "balcon",
+    stock:20,
+    dates: ["2023-06-01", "2023-06-02", "2023-06-03"]  
+    stockPorDia: ["2023-06-01:2","2023-06-02:2","2023-06-03:2" ]
+  }]

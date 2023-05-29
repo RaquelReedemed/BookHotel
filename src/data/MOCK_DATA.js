@@ -17,6 +17,7 @@ const MOCK_DATA = [
     detailTitle3: "Minibar lleno",
     descDetail3:
       "El minibar está repleto de golosinas y está diseñado para ofrecer los mejores niveles posibles de comodidad y relajación. El diseño es contemporáneo basado en colores reconfortantes y logra atraer. El enfoque principal del minibar es ofrecer un excelente tiempo de vacaciones mientras está en la habitación.",
+    dates: ["2023-06-01", "2023-06-02", "2023-06-03"]  
   },
   {
     id: 2,
@@ -55,6 +56,8 @@ const MOCK_DATA = [
     detailTitle3: "Minibar lleno",
     descDetail3:
       "El minibar está repleto de golosinas y está diseñado para ofrecer los mejores niveles posibles de comodidad y relajación. El diseño es contemporáneo basado en colores reconfortantes y logra atraer. El enfoque principal del minibar es ofrecer un excelente tiempo de vacaciones mientras está en la habitación.",
+      dates: ["2023-06-01", "2023-06-02", "2023-06-03"]  
+  
   },
   {
     id: 4,
@@ -70,6 +73,7 @@ const MOCK_DATA = [
     descDetail2: "Todos los electrodomésticos de las habitaciones panorámicas son de marcas reconocidas y garantizan la máxima comodidad y funcionalidad. El diseño es moderno y elegante, en perfecta armonía con el ambiente natural. Los huéspedes pueden disfrutar de una estancia cómoda y relajante con todas las comodidades que necesitan.",
     detailTitle3: "Bar con vistas panorámicas",
     descDetail3:"El bar en la habitación panorámica ofrece bebidas y snacks con una vista impresionante del paisaje natural. El diseño es minimalista y elegante, con materiales de alta calidad para garantizar la máxima comodidad y relajación. Los huéspedes pueden disfrutar de momentos inolvidables en la habitación, mientras disfrutan de las impresionantes vistas panorámicas.",
+    dates: ["2023-06-01", "2023-06-02", "2023-06-03"]  
   },
   {
     id: 5,
@@ -85,6 +89,7 @@ const MOCK_DATA = [
     descDetail2:"Todos los electrodomésticos de las habitaciones panorámicas son de marcas reconocidas y garantizan la máxima comodidad y funcionalidad. El diseño es moderno y elegante, en perfecta armonía con el ambiente natural. Los huéspedes pueden disfrutar de una estancia cómoda y relajante con todas las comodidades que necesitan.",
     detailTitle3: "Bar con vistas panorámicas",
     descDetail3: "El bar en la habitación panorámica ofrece bebidas y snacks con una vista impresionante del paisaje natural. El diseño es minimalista y elegante, con materiales de alta calidad para garantizar la máxima comodidad y relajación. Los huéspedes pueden disfrutar de momentos inolvidables en la habitación, mientras disfrutan de las impresionantes vistas panorámicas.",
+    dates: ["2023-06-01", "2023-06-02", "2023-06-03"]  
   },
   {
     id: 6,
@@ -100,6 +105,8 @@ const MOCK_DATA = [
     descDetail2: "Todos los electrodomésticos de las habitaciones panorámicas son de marcas reconocidas y garantizan la máxima comodidad y funcionalidad. El diseño es moderno y elegante, en perfecta armonía con el ambiente natural. Los huéspedes pueden disfrutar de una estancia cómoda y relajante con todas las comodidades que necesitan.",
     detailTitle3: "Bar con vistas panorámicas",
     descDetail3: "El bar en la habitación panorámica ofrece bebidas y snacks con una vista impresionante del paisaje natural. El diseño es minimalista y elegante, con materiales de alta calidad para garantizar la máxima comodidad y relajación. Los huéspedes pueden disfrutar de momentos inolvidables en la habitación, mientras disfrutan de las impresionantes vistas panorámicas.",
+    dates: ["2023-06-01", "2023-06-02", "2023-06-03"]  
+
   },
   {
     id: 7,
@@ -115,6 +122,8 @@ const MOCK_DATA = [
     descDetail2: "La habitación Presidencial cuenta con equipamiento de alta gama de las mejores marcas, que garantiza la máxima comodidad y funcionalidad. El diseño es moderno y elegante, en armonía con el ambiente de lujo de la habitación. Los huéspedes pueden disfrutar de una estancia única y exclusiva con todas las comodidades necesarias.",
     detailTitle3: "Bar privado",
     descDetail3: "La habitación Presidencial cuenta con un bar privado para que los huéspedes disfruten de bebidas y snacks exclusivos sin tener que salir de la habitación. El diseño es sofisticado y elegante, con una selección de bebidas y snacks cuidadosamente elegida para satisfacer los gustos más exigentes. Los huéspedes pueden disfrutar de momentos inolvidables en la habitación más exclusiva de Villa.",
+    dates: ["2023-06-01", "2023-06-02", "2023-06-03"]  
+
   },
   {
     id: 8,
@@ -130,6 +139,8 @@ const MOCK_DATA = [
     descDetail2: "La habitación Presidencial cuenta con equipamiento de alta gama de las mejores marcas, que garantiza la máxima comodidad y funcionalidad. El diseño es moderno y elegante, en armonía con el ambiente de lujo de la habitación. Los huéspedes pueden disfrutar de una estancia única y exclusiva con todas las comodidades necesarias.",
     detailTitle3: "Bar privado",
     descDetail3: "La habitación Presidencial cuenta con un bar privado para que los huéspedes disfruten de bebidas y snacks exclusivos sin tener que salir de la habitación. El diseño es sofisticado y elegante, con una selección de bebidas y snacks cuidadosamente elegida para satisfacer los gustos más exigentes. Los huéspedes pueden disfrutar de momentos inolvidables en la habitación más exclusiva de Villa.",
+    dates: ["2023-06-01", "2023-06-02", "2023-06-03"]  
+
   },
   {
     id: 9,
@@ -145,6 +156,8 @@ const MOCK_DATA = [
     descDetail2: "La habitación Presidencial cuenta con equipamiento de alta gama de las mejores marcas, que garantiza la máxima comodidad y funcionalidad. El diseño es moderno y elegante, en armonía con el ambiente de lujo de la habitación. Los huéspedes pueden disfrutar de una estancia única y exclusiva con todas las comodidades necesarias.",
     detailTitle3: "Bar privado",
     descDetail3: "La habitación Presidencial cuenta con un bar privado para que los huéspedes disfruten de bebidas y snacks exclusivos sin tener que salir de la habitación. El diseño es sofisticado y elegante, con una selección de bebidas y snacks cuidadosamente elegida para satisfacer los gustos más exigentes. Los huéspedes pueden disfrutar de momentos inolvidables en la habitación más exclusiva de Villa.",
+    dates: ["2023-06-01", "2023-06-02", "2023-06-03"]  
+
   },
 ];
 

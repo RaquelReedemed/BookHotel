@@ -4,7 +4,7 @@ import { useState } from 'react';
 import { CartContext } from '../../context/CartContext';
 import { Navigate } from 'react-router-dom';
 import { AuthContext } from '../../context/AuthContext';
-import { collection, addDoc, doc, updateDoc } from 'firebase/firestore';
+import { collection, addDoc, doc, updateDoc, getDoc } from 'firebase/firestore';
 import { db  } from '../../firebase/config'; /* para armar el collection */
 import { Link } from 'react-router-dom';
 
@@ -72,21 +72,18 @@ const Checkout = () => {
                       })
                 } else{
                     alert('No hay stock de ' + item.name)
-                }
-                
+                }  
             } 
-            )
-
-         
+            ) 
        })
 
        const ordersRef = collection(db, "orders")
        /* el post responde con un snapcha */
-      /*  addDoc(ordersRef, orden)
+        addDoc(ordersRef, orden)
          .then((doc) => {
             setOrderId(doc.id)
             emptyCart()  //para vaciar el carrito cuando se genera la orden
-         }) */
+         }) 
     }  
 
     if(orderId) {
@@ -136,8 +133,7 @@ const Checkout = () => {
               value={values.email}
               name='email'
               onChange={handleInput}
-              readOnly>
-              
+              readOnly>   
             </input>
 
             <button className='btn btn-primary' type='submit'>Enviar</button>

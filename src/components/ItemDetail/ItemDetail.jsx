@@ -1,5 +1,5 @@
 import ShoppingCartIcon from "@mui/icons-material/ShoppingCart";
-import { useContext, useState } from "react";
+import { useContext, useEffect, useState } from "react";
 
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { library } from "@fortawesome/fontawesome-svg-core";
@@ -20,8 +20,7 @@ import SelectFecha from "../SelectFecha.jsx/SelectFecha";
 import { CartContext } from "../../context/CartContext";
 
 
-
-const fechas =[
+/* const fechas =[
   {
       value: "01/06/2023",
       label: "01/06/2023"
@@ -38,7 +37,7 @@ const fechas =[
      
   }
 
-]
+] */
 
 const ItemDetail = ({itemData}) => {
 
@@ -49,23 +48,43 @@ const ItemDetail = ({itemData}) => {
 
    const [cantidad, setCantidad] = useState(1);
    const [fecha, setFecha] = useState(null);
-   console.log(cantidad)
+   console.log('cantidad',cantidad)
    console.log(fecha)
    
+   /* calculo de precio por dia seleccionado */
+   const [totalPrice, setTotalPrice] = useState(0);
+   console.log('totalDias', totalPrice)
+
+   /* calculo para suma el total de dias mas cantidad de personas */
+   const [totalFinal, setTotalFinal] = useState(0);
+   console.log('total final', totalFinal)
 
    const handleAgregar = () => {
     /* se crea un nuevo objeto con todas las propiedades de item y una nueva propiedad "cantidad" */
     const newItem = {
         ...itemData,
         cantidad,
-        fecha
+        fecha,
+        totalFinal
     }
     agregarAlCarrito(newItem)
 
+   
     /* const newCart = cart.slice() */ //se crea una copia de cart []
     /* newCart.push(newItem)  */       //se agrega el nuevo elemento al array vacio
    /*  setCart( [...cart, newItem] ) */ ///forma mas sencilla
 }
+
+const calcularTotalFinal = () => {
+  const subtotal = itemData.price * cantidad;
+  console.log('subtotal',subtotal)
+  const total = subtotal + totalPrice;
+  setTotalFinal(total)
+}
+
+useEffect(() => {
+  calcularTotalFinal()
+}, [cantidad, totalPrice]);
 
   return (
     <div>
@@ -125,25 +144,39 @@ const ItemDetail = ({itemData}) => {
 
       
        <SelectFecha setFecha={setFecha}
-                    options={fechas}
+                   // options={fechas}
+                   options={itemData}
+                   price= {parseInt(itemData.price)}
+                   totalPrice = {totalPrice}
+                   setTotalPrice={setTotalPrice}
        />
        {
         isInCart(itemData.id)
         ?
         <Link className="btn btn-success" to="/cart">Terminar mi pago</Link>
         :
-        <ItemCount stock={parseInt(itemData.stock)}
+        <ItemCount stock={parseInt(itemData.stockPersonas)}
                   item={itemData}
                   cantidad={cantidad}
                   setCantidad={setCantidad}
                   agregar = {handleAgregar}
        />
        }
-          
+    
        <div className="cont-btn-reserva">
+       
        <p>SubTotal: {itemData.price * cantidad}</p>
        </div>
-       
+       <p>dates: {itemData.fechasDisponibles}</p>
+   
+   {
+    totalFinal !== itemData.price 
+    ?
+    <h2>Subtotal:{totalFinal}</h2>
+    :
+    <h2>Subtotal: 0</h2>
+   }
+ 
 
       </div>
   )

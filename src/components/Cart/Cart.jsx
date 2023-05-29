@@ -38,6 +38,7 @@ const Cart = () => {
                 </div>
                 <p>Cantidad: {item.cantidad}</p>
                 <p>Subtotal: {item.price * item.cantidad}</p>
+                <p>Total: {item.totalFinal}</p>
 {/* removeItem se debe pasar por referencia, es decir con una funcion flecha que retorne el valor de removeItem con el id, es decir capurar el id*/}
                  <button onClick={() => removeItem(item.id)} className="btn btn-danger"><FontAwesomeIcon icon={faTrash}/></button> 
                 <hr/>
