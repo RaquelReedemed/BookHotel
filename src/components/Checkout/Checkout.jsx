@@ -54,17 +54,39 @@ const Checkout = () => {
 
        const orden = {
          client: values,
-         items: cart.map(item => ({id: item.id, nombre: item.name, cantidad: item.cantidad})),
+         items: cart.map(item => ({
+            id: item.id, 
+            nombre: item.name, 
+            cantidad: item.cantidad})),
          total: totalCarrito() ,
-         fyh: new Date()
+         fyh: new Date(),
+         transformedStock: cart.map(item => item.transformedStock)
        }
        console.log(orden)
 
        orden.items.forEach((item) => {
-          const itemRef = doc(db, "habitaciones", item.id)
+          const itemRef = doc(db, "habitaciones", item.id)/*se crea referencia a cada iteracion a un doc en la db*/
 
         /* funcion para descontar cantidad de stock y actualizar en la */
-          getDoc(itemRef)
+
+        item.transformedStock.forEach(stockString => { /*se itera cada elemento del array */
+            const [date, stock] = stockString.split(":");/*se divide cada elemento en fecha:cantidad  */
+ 
+            getDoc(itemRef).then((doc) => {/*se consulta a la db para obtener el doc */
+                if (doc.data().stock >= parseInt(stock)) {/*se verifica si hay stock */
+                    updateDoc(itemRef, { 
+                        stock: doc.data().stock - parseInt(stock)
+                    });
+                }else {
+                    alert('no hay stock de ' + item.name + ' para la fecha ' + date);
+                }
+            })
+        })
+
+          
+       })
+
+       /* getDoc(itemRef)
             .then((doc) => {
                 if (doc.data().stock >= item.cantidad){
                     updateDoc(itemRef, {
@@ -74,8 +96,7 @@ const Checkout = () => {
                     alert('No hay stock de ' + item.name)
                 }  
             } 
-            ) 
-       })
+            )  */
 
        const ordersRef = collection(db, "orders")
        /* el post responde con un snapcha */

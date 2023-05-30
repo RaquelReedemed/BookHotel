@@ -65,7 +65,12 @@ const ItemDetail = ({itemData}) => {
         ...itemData,
         cantidad,
         fecha,
-        totalFinal
+        totalFinal,
+        transformedStock: itemData.stockPorDia.reduce((acc, stockString) => {
+          const [date, stock] = stockString.split(":");
+          acc[date] = parseInt(stock);
+          return acc;
+        },{})
     }
     agregarAlCarrito(newItem)
 

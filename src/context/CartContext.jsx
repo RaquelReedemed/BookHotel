@@ -29,7 +29,7 @@ export const CartProvider = ({children}) => {
     
     /* total de la compra */
     const totalCarrito = () => {
-        return cart.reduce((acc, item) => acc + item.totalFinal * 1, 0)
+        return cart.reduce((acc, item) => acc + item.totalFinal, 0)
     }
 
     /* eliminar item de carrito */

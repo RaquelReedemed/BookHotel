@@ -13,11 +13,7 @@ const SelectFecha = ({options, price, setTotalPrice, totalPrice, transformedStoc
   const stockPorDia = options.stockPorDia
   console.log('stock por dia', stockPorDia)
   
-  /* const transformedStock = options.stockPorDia.reduce((acc, stockString) => {
-    const [date, stock] = stockString.split(":");
-    acc[date] = parseInt(stock);
-    return acc;
-  }, {}); */
+
    
    const [startDate, setStartDate] = useState(null);
    console.log('startDate',startDate)
