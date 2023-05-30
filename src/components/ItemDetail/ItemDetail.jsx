@@ -69,6 +69,8 @@ const ItemDetail = ({itemData}) => {
     }
     agregarAlCarrito(newItem)
 
+  
+
    
     /* const newCart = cart.slice() */ //se crea una copia de cart []
     /* newCart.push(newItem)  */       //se agrega el nuevo elemento al array vacio
@@ -149,6 +151,12 @@ useEffect(() => {
                    price= {parseInt(itemData.price)}
                    totalPrice = {totalPrice}
                    setTotalPrice={setTotalPrice}
+                   transformedStock= {itemData.stockPorDia.reduce((acc, stockString) => {
+    const [date, stock] = stockString.split(":");
+    acc[date] = parseInt(stock);
+    return acc;
+  }, {})
+    }
        />
        {
         isInCart(itemData.id)

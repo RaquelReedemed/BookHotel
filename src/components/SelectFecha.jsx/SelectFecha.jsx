@@ -5,16 +5,25 @@ import 'react-datepicker/dist/react-datepicker.css';
 import { parseISO, format } from "date-fns";
 import { differenceInDays } from "date-fns";
 
-const SelectFecha = ({options, price, setTotalPrice, totalPrice}) => {
+const SelectFecha = ({options, price, setTotalPrice, totalPrice, transformedStock}) => {
 
   const dates = options.fechasDisponibles
+  console.log('fechasDisponibles', dates)
+
+  const stockPorDia = options.stockPorDia
+  console.log('stock por dia', stockPorDia)
+  
+  /* const transformedStock = options.stockPorDia.reduce((acc, stockString) => {
+    const [date, stock] = stockString.split(":");
+    acc[date] = parseInt(stock);
+    return acc;
+  }, {}); */
    
    const [startDate, setStartDate] = useState(null);
    console.log('startDate',startDate)
    const [endDate, setEndDate] = useState(null);
    console.log('endDate',endDate)
- /*   const [totalPrice, setTotalPrice] = useState(0);
-   console.log('totalDias', totalPrice) */
+
 
    const minDate = new Date(Math.min(...dates.map(date => parseISO(date)))) ;
   const maxDate = new Date(Math.max(...dates.map(date => parseISO(date))));
@@ -63,8 +72,17 @@ const SelectFecha = ({options, price, setTotalPrice, totalPrice}) => {
   </p>
 )} */}
 
-
-      
+    {
+    startDate && endDate && (
+      <p>
+        Stock por dia:
+         {Object.keys(transformedStock).map(date => (
+          <span key={date}>{date}: {transformedStock[date]}</span>
+         ))}
+      </p>
+    )
+   } 
+    
     </div>
   );
 }
