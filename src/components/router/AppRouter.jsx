@@ -41,7 +41,7 @@ const AppRouter = () => {
       {/* Rutas publicas */}
         <Route path="/login" element={<LoginScreen/>}/>
         <Route path="/register" element={<RegisterScreen/>}/>
-        <Route path="*" element={<Navigate to="/login"/>}></Route>
+         <Route path="*" element={<Navigate to="/login"/>}></Route> 
       </Routes>
     }
         </BrowserRouter>

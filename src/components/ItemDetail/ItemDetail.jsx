@@ -69,14 +69,17 @@ const ItemDetail = ({itemData}) => {
         transformedStock: itemData.stockPorDia.reduce((acc, stockString) => {
           const [date, stock] = stockString.split(":");
           acc[date] = parseInt(stock);
+
+          console.log('tipo dato date', typeof date);
+          console.log('tipo dato date',typeof acc[date])
           return acc;
         },{})
     }
     agregarAlCarrito(newItem)
 
-  
+    
 
-   
+
     /* const newCart = cart.slice() */ //se crea una copia de cart []
     /* newCart.push(newItem)  */       //se agrega el nuevo elemento al array vacio
    /*  setCart( [...cart, newItem] ) */ ///forma mas sencilla

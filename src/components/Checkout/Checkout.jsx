@@ -66,27 +66,9 @@ const Checkout = () => {
 
        orden.items.forEach((item) => {
           const itemRef = doc(db, "habitaciones", item.id)/*se crea referencia a cada iteracion a un doc en la db*/
-
+       console.log('este es item.id',item.id)
         /* funcion para descontar cantidad de stock y actualizar en la */
-
-        item.transformedStock.forEach(stockString => { /*se itera cada elemento del array */
-            const [date, stock] = stockString.split(":");/*se divide cada elemento en fecha:cantidad  */
- 
-            getDoc(itemRef).then((doc) => {/*se consulta a la db para obtener el doc */
-                if (doc.data().stock >= parseInt(stock)) {/*se verifica si hay stock */
-                    updateDoc(itemRef, { 
-                        stock: doc.data().stock - parseInt(stock)
-                    });
-                }else {
-                    alert('no hay stock de ' + item.name + ' para la fecha ' + date);
-                }
-            })
-        })
-
-          
-       })
-
-       /* getDoc(itemRef)
+          getDoc(itemRef)
             .then((doc) => {
                 if (doc.data().stock >= item.cantidad){
                     updateDoc(itemRef, {
@@ -96,7 +78,11 @@ const Checkout = () => {
                     alert('No hay stock de ' + item.name)
                 }  
             } 
-            )  */
+            )  
+        
+       })
+
+       
 
        const ordersRef = collection(db, "orders")
        /* el post responde con un snapcha */
