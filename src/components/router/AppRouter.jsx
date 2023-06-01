@@ -13,6 +13,7 @@ import { Inicio } from '../Inicio';
 import Contacto from '../Contacto/Contacto';
 import Cart from '../Cart/Cart';
 import Checkout from '../Checkout/Checkout';
+import { ItemListId } from '../ItemListId.jsx/ItemListId';
 
 const AppRouter = () => {
 
@@ -28,12 +29,12 @@ const AppRouter = () => {
       {/* Rutas privadas */}
       <Routes>
       <Route path="/" element={<Inicio/>}/>
-      <Route path="/habitaciones/:categoryId" element={<ItemListContainer/>}/>
+      <Route path="/habitaciones/:categoryId" element={<ItemListId/>}/>
       <Route path="detail/:itemId" element={<ItemDetailContainer/>}/>
       <Route path="/cart" element={<Cart/>}/>
       <Route path='/checkout' element={<Checkout/>}/>
       <Route path="/contacto" element={<Contacto/>}/>
-      <Route path="*" element={<Error404/>}></Route>
+       <Route path="*" element={<Error404/>}></Route> 
      </Routes>
       </>
       :
@@ -41,11 +42,15 @@ const AppRouter = () => {
       {/* Rutas publicas */}
         <Route path="/login" element={<LoginScreen/>}/>
         <Route path="/register" element={<RegisterScreen/>}/>
-         <Route path="*" element={<Navigate to="/login"/>}></Route> 
+          <Route path="*" element={<Navigate to="/login"/>}></Route>  
       </Routes>
     }
         </BrowserRouter>
     );
+
+   
+
+    
 
 }
 

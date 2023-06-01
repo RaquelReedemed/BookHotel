@@ -18,6 +18,8 @@ import { Link } from "react-router-dom";
 import ItemCount from "../ItemCount/ItemCount";
 import SelectFecha from "../SelectFecha.jsx/SelectFecha";
 import { CartContext } from "../../context/CartContext";
+import TerminarPago from "../TerminarPago/TerminarPago";
+import { format } from "date-fns";
 
 
 /* const fechas =[
@@ -50,6 +52,13 @@ const ItemDetail = ({itemData}) => {
    const [fecha, setFecha] = useState(null);
    console.log('cantidad',cantidad)
    console.log(fecha)
+
+   /* calculo de checkin y checkout */
+
+   const [startDate, setStartDate] = useState(null);
+   console.log('checkIn',startDate)
+   const [endDate, setEndDate] = useState(null);
+   console.log('checkOut',endDate)
    
    /* calculo de precio por dia seleccionado */
    const [totalPrice, setTotalPrice] = useState(0);
@@ -73,13 +82,13 @@ const ItemDetail = ({itemData}) => {
           console.log('tipo dato date', typeof date);
           console.log('tipo dato date',typeof acc[date])
           return acc;
-        },{})
+        },{}),
+        formattedCheckIN: format(startDate, 'dd MMM yyyy'),
+        formattedCkeckOUT: format(endDate, 'dd MMM yyyy')
     }
     agregarAlCarrito(newItem)
-
+    console.log('formatedCHECKIN', formattedDateMin)
     
-
-
     /* const newCart = cart.slice() */ //se crea una copia de cart []
     /* newCart.push(newItem)  */       //se agrega el nuevo elemento al array vacio
    /*  setCart( [...cart, newItem] ) */ ///forma mas sencilla
@@ -113,7 +122,7 @@ useEffect(() => {
     <div className="contenedorDescripcion">
       <h2>Descripcion</h2>
       <p>{itemData.description}</p>
-      <p><strong>Precio: ${itemData.price} P/dia</strong></p>
+      <p><strong>Precio: ${itemData.price} P/dia 1 persona</strong></p>
     </div>
 
     <div className="contenedorAmenities">
@@ -152,52 +161,76 @@ useEffect(() => {
       </ul> {/* fin de listaAmenities */}
     </div> {/* fin de contenedorAmenities */}
 
+
+    {/* Seleccionador */}
+
+    <div className="contSeleccionador">
+
+       {/* para mostrar mns "terminar la compra" cuando reserve */}
       
+       {
+        isInCart(itemData.id)
+        ?
+       
+       <TerminarPago/>
+        :
+        <>
+        
        <SelectFecha setFecha={setFecha}
                    // options={fechas}
                    options={itemData}
                    price= {parseInt(itemData.price)}
                    totalPrice = {totalPrice}
                    setTotalPrice={setTotalPrice}
+                   startDate={startDate}
+                   setStartDate={setStartDate}
+                   endDate={endDate}
+                   setEndDate={setEndDate}
                    transformedStock= {itemData.stockPorDia.reduce((acc, stockString) => {
-    const [date, stock] = stockString.split(":");
-    acc[date] = parseInt(stock);
-    return acc;
-  }, {})
-    }
-       />
-       {
-        isInCart(itemData.id)
-        ?
-        <Link className="btn btn-success" to="/cart">Terminar mi pago</Link>
-        :
-        <ItemCount stock={parseInt(itemData.stockPersonas)}
+                   const [date, stock] = stockString.split(":");
+                   acc[date] = parseInt(stock);
+                   return acc;
+    }, {})}
+      />
+
+<ItemCount stock={parseInt(itemData.stockPersonas)}
                   item={itemData}
                   cantidad={cantidad}
                   setCantidad={setCantidad}
                   agregar = {handleAgregar}
        />
+
+
+
+
+</>
        }
-    
-       <div className="cont-btn-reserva">
-       
-       <p>SubTotal: {itemData.price * cantidad}</p>
-       </div>
-       <p>dates: {itemData.fechasDisponibles}</p>
-   
-   {
+
+
+      {/* mostrar sub-total */}
+       {
     totalFinal !== itemData.price 
     ?
     <h2>Subtotal:{totalFinal}</h2>
     :
     <h2>Subtotal: 0</h2>
    }
- 
+       </div>
+    
 
+      
+    
+      
+   
+   
+   
+ 
       </div>
   )
 }
 
+ {/* <p>SubTotal: {itemData.price * cantidad}</p> */}
+  {/*   <p>dates: {itemData.fechasDisponibles}</p> */}
 export default ItemDetail
 
 library.add(
@@ -210,3 +243,4 @@ library.add(
   faWaterLadder
 );
 
+{/*  <Link className="btn btn-success" to="/cart">Terminar mi pago</Link> */}

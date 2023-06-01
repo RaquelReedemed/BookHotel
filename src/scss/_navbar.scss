@@ -18,6 +18,8 @@
     z-index: 100;
 }
 
+
+
 .nav .nav_logo img {
     width: 76px;
     height: 28px;
@@ -118,10 +120,27 @@
 
 .nav .nav_item,
 .nav_logo,
+.contBtnLogout,
 .cart,
 .icon_toggle,
 .select{
     display: none;
+}
+
+.contBtnLogout button{
+    color:#666a72;
+    background: #cacacc !important;
+    cursor: pointer;
+}
+
+.contBtnLogout-mov{
+
+    cursor: pointer;
+}
+
+.contBtnLogout-mov p{
+
+    font-size: 14px;
 }
 
 .nav_collapse{
@@ -215,6 +234,7 @@
  @media (min-width: 768px) {
     .nav .nav_item,
     .nav_logo,
+    .contBtnLogout,
     .cart,
     .icon_toggle,
     .select{

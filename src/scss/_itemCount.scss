@@ -1,0 +1,92 @@
+
+.wrapper{
+    height: 35px;
+ //   background-color: #FFF;
+    display: flex;
+    align-items: center;
+    border-radius: 12px;
+    justify-content: space-evenly;
+}
+
+.wrapper span{
+    font-size: 20px;
+    font-weight: 600;
+    background-color:#FFF ;
+}
+
+.wrapper span.num{
+    font-size: 25px;
+    border-right: 2px solid rgba(0, 0, 0, 0.2);
+    border-left: 2px solid rgba(0, 0, 0, 0.2);
+}
+
+.minu, .plus{
+    cursor: pointer;
+}
+
+/* condiocionales */
+
+.danger-color{
+    color: #c75555;
+   box-shadow:0 2px 4px rgba(0, 0, 0, 0.2) ;
+}
+
+/* boton reservar */
+
+.cta {
+    position: relative;
+ //   margin: auto;
+    padding: 12px 18px;
+    transition: all 0.2s ease;
+    border: none;
+    background: none;
+   
+}
+
+.cta:before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    display: block;
+    border-radius: 50px;
+    background: #b1dae7;
+    width: 45px;
+    height: 45px;
+    transition: all 0.3s ease;
+}
+
+.cta span{
+    position: relative;
+  //  font-family: "Ubuntu", sans-serif;
+    font-size: 18px;
+    font-weight: 700;
+    letter-spacing: 0.5em;
+    color:#234567 ;
+}
+
+.cta svg{
+    position: relative;
+    top: 0;
+    margin-left: 10px;
+    fill: none;
+    stroke-linecap: round;
+    stroke-linejoin: round;
+    stroke: #234567;
+    stroke-width: 2;
+    transform: translateX(-5px);
+    transition: all 0.3s ease;
+}
+
+.cta:hover::before{
+    width: 100%;
+    background: #b1dae7;
+}
+
+.cta:hover svg {
+    transform: translateX(0);
+}
+
+.cta:active {
+    transform: scale(0.95);
+}

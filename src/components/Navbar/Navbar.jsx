@@ -8,10 +8,16 @@ import { CartWidget } from "../CartWidget/CartWidget";
 
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { library } from "@fortawesome/fontawesome-svg-core";
+import { faToggleOn,
+         faToggleOff,
+         faMoon,
+         faSun
+} from '@fortawesome/free-solid-svg-icons';
 import { faBars } from "@fortawesome/free-solid-svg-icons";
 import { DarkModeContext } from "../../context/DarkModeContext";
 import { CartContext } from "../../context/CartContext";
 import { AuthContext } from "../../context/AuthContext";
+import classNames from "classnames";
 
 export const Navbar = () => {
   const [active, setActive] = useState("nav_collapse");
@@ -19,6 +25,7 @@ export const Navbar = () => {
 
   /* Modo oscuro */
   const { darkMode, changeMode } = useContext(DarkModeContext)
+
 
   /* Desaparecer carrito cuando este en cero */
   const { cart } = useContext(CartContext)
@@ -34,7 +41,7 @@ export const Navbar = () => {
   };
 
   return (
-    <nav className="nav">
+    <nav className='nav'>
       <ul className="nav_ul">
         <li className="nav_logo">
           {" "}
@@ -54,6 +61,15 @@ export const Navbar = () => {
           {" "}
           <Link to="/habitaciones/presidencial">Presidencial</Link>
         </li>
+        <li className="nav_item">
+        <Link>{darkMode 
+             ?
+             <FontAwesomeIcon className='on' onClick={changeMode} icon={faMoon}/>
+             :
+             <FontAwesomeIcon className='on' onClick={changeMode} icon={faSun}/>
+             }
+        </Link>
+        </li>
       </ul>
 
     
@@ -67,10 +83,10 @@ export const Navbar = () => {
         }
           
         </li>
-        <li>
+        <li className="contBtnLogout">
           {/*   <p>Bienvenido {user.email}</p> */}
-            <button className="btn btn-danger" onClick={logout}>Logout</button>
-          </li>
+            <Link className="btnLogout" onClick={logout}>Logout</Link>
+        </li>
         <li className="icon_toggle">
           <a className="icon_toggle-mobile">
             <FontAwesomeIcon icon={faBars} />
@@ -85,12 +101,14 @@ export const Navbar = () => {
         <li  className="nav_logo-mobile">
         <Link to="./"><img src={logo} alt="logo"></img></Link>
         <Link to="/"> <p>Inicio</p></Link>
+        {/* <button className="btn btn-info" onClick={changeMode} >Modo</button> */}
         <p>{darkMode 
              ?
-              'dark'
-             : 'light'
-             }</p>
-             <button onClick={changeMode} >Change</button>
+             <FontAwesomeIcon className='on' onClick={changeMode} icon={faMoon}/>
+             :
+             <FontAwesomeIcon className='on' onClick={changeMode} icon={faSun}/>
+             }
+        </p>
         </li>
 
         <div className="cont_icons-mobile">
@@ -125,17 +143,26 @@ export const Navbar = () => {
           <Link to="/contacto"> Contactanos</Link>
           </li>
 
-          <li>
+          {/* <li>
             <p>Bienvenido {user.email}</p>
             <button className="btn btn-danger" onClick={logout}>Logout</button>
-          </li>
+          </li> */}
+
+          <li className="contBtnLogout-mov">
+            <p>Bienvenido {user.email}</p> 
+            <Link className="btnLogout" onClick={logout}>Logout</Link>
+        </li>
         </ul>
       </div>
     </nav>
   );
 };
 
-library.add(faBars);
+library.add(faBars,
+            faToggleOn,
+            faToggleOff,
+            faMoon,
+           faSun);
 
 {
   /*  <li className='nav_item'>Habitaciones con Balcon</li>

@@ -5,7 +5,7 @@ import 'react-datepicker/dist/react-datepicker.css';
 import { parseISO, format } from "date-fns";
 import { differenceInDays } from "date-fns";
 
-const SelectFecha = ({options, price, setTotalPrice, totalPrice, transformedStock}) => {
+const SelectFecha = ({options, price, setTotalPrice, totalPrice, startDate, setStartDate, endDate, setEndDate, transformedStock}) => {
 
   const dates = options.fechasDisponibles
   console.log('fechasDisponibles', dates)
@@ -15,10 +15,10 @@ const SelectFecha = ({options, price, setTotalPrice, totalPrice, transformedStoc
   
 
    
-   const [startDate, setStartDate] = useState(null);
+  /*  const [startDate, setStartDate] = useState(null);
    console.log('startDate',startDate)
    const [endDate, setEndDate] = useState(null);
-   console.log('endDate',endDate)
+   console.log('endDate',endDate) */
 
 
    const minDate = new Date(Math.min(...dates.map(date => parseISO(date)))) ;
@@ -30,11 +30,9 @@ const SelectFecha = ({options, price, setTotalPrice, totalPrice, transformedStoc
   console.log('formatedateMAX', formattedDateMax)
   
    console.log('minDate', minDate)
-
-  
    console.log('maxDate', maxDate)
-
-
+  
+  
    const onChangeDateHandler = (value) => {
     console.log(value)
          setStartDate(value[0])
@@ -50,7 +48,9 @@ const SelectFecha = ({options, price, setTotalPrice, totalPrice, transformedStoc
    }, [startDate, endDate, price]);
 
   return (
-    <div>
+    <div className="contSeleccionador">
+
+      <h4>Seleccione fechas</h4>
 
     <ReactDatePicker
       selectsRange={true}
@@ -68,7 +68,7 @@ const SelectFecha = ({options, price, setTotalPrice, totalPrice, transformedStoc
   </p>
 )} */}
 
-    {
+   {/*  {
     startDate && endDate && (
       <p>
         Stock por dia:
@@ -77,7 +77,7 @@ const SelectFecha = ({options, price, setTotalPrice, totalPrice, transformedStoc
          ))}
       </p>
     )
-   } 
+   } */} 
     
     </div>
   );

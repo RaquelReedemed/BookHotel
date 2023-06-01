@@ -1,9 +1,5 @@
 
 
-import { Inicio } from "./components/Inicio"
-
-
-import { BrowserRouter, Routes, Route, Navigate } from "react-router-dom"
 
 import { CartProvider } from "./context/CartContext"
 import { DarkModeProvider } from "./context/DarkModeContext"
@@ -11,10 +7,11 @@ import { DarkModeProvider } from "./context/DarkModeContext"
 import { AuthProvider } from "./context/AuthContext"
 import AppRouter from "./components/router/AppRouter"
 
+import useLocalStorage from "use-local-storage"
+
 
 
 function App() {
-
 
 
   return (
