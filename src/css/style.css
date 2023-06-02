@@ -72,7 +72,11 @@ a:hover {
 
 /*  dark Mode */
 body.dark {
-  background-color: #acaeb0;
+  background-color: #b4b4b4;
+}
+
+.dark-modeH1 {
+  color: #ffffff;
 }
 
 .nav {
@@ -286,7 +290,7 @@ body.dark {
 }
 
 /* version mobile */
-@media (min-width: 768px) {
+@media (min-width: 1024px) {
   .nav .nav_item,
   .nav_logo,
   .contBtnLogout,
@@ -443,6 +447,41 @@ body.dark {
   text-align: center;
 }
 
+/* medias queries */
+@media (min-width: 768px) {
+  .containerTitulo .img-fluid {
+    width: 100% !important;
+  }
+}
+.contTituloReserva {
+  display: flex;
+  justify-content: center;
+  margin-top: 30px;
+}
+
+.contTituloReserva h1 {
+  color: #1ebbce;
+}
+
+.contTotalPagar {
+  display: flex;
+  justify-content: flex-end;
+  margin-right: 20px;
+}
+
+.contCheck .btn {
+  height: 38px;
+  border-color: black;
+}
+
+.contCheck {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-left: 20px;
+  margin-right: 20px;
+}
+
 .contImg {
   width: 300px;
 }
@@ -554,6 +593,29 @@ body.dark {
   opacity: 1;
   transform: translateY(30px);
   transition-duration: 0.3s;
+}
+
+/* boton vaciar carrito */
+.buttonVaciar {
+  border-radius: 10px;
+  border: 0;
+  background-color: rgb(255, 56, 86);
+  letter-spacing: 1.5px;
+  font-size: 10px;
+  transition: all 0.3s ease;
+  color: hsl(0, 0%, 100%);
+}
+
+.buttonVaciar:hover {
+  box-shadow: rgb(201, 46, 70) 0px 7px 0px 0px;
+}
+
+.buttonVaciar:active {
+  background-color: rgb(255, 56, 86);
+  /*50, 168, 80*/
+  box-shadow: rgb(201, 46, 70) 0px 0px 0px 0px;
+  transform: translateY(5px);
+  transition: 200ms;
 }
 
 .cart-widget {
@@ -955,7 +1017,7 @@ button {
 }
 
 .card-image .img-fluid {
-  max-width: 100%;
+  width: 100%;
   height: auto;
 }
 
@@ -1013,9 +1075,12 @@ button {
     margin-top: 50px;
   }
 }
-@media (min-width: 470px) {
+@media (min-width: 768px) {
   .grid-container {
     grid-template-columns: 1fr 1fr;
+  }
+  .lista .container {
+    width: 669px;
   }
 }
 @media (min-width: 970px) {

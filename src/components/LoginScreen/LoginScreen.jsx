@@ -11,6 +11,8 @@ import { faEnvelope,
  } from '@fortawesome/free-solid-svg-icons';
 
  import useLocalStorage from 'use-local-storage';
+import { useNavigate } from 'react-router-dom';
+
 
 
 const LoginScreen = () => {
@@ -29,10 +31,15 @@ const LoginScreen = () => {
          })
     }
 
+    const [navi, setNavi] = useState(false);
+
     const handleSubmit = (e) => {
       e.preventDefault()
       
       login(values)
+          setNavi("/carga")
+      
+      
       console.log(values)
       console.log(login)
     }
@@ -48,6 +55,11 @@ const LoginScreen = () => {
 
 
     return (
+
+      <>
+        {
+          navi && <Navigate to="carga"/>
+        }
         <div className='pagLogin' data-theme={theme}>
         <div className='login'>
            <h1>Login</h1>
@@ -105,6 +117,7 @@ const LoginScreen = () => {
                    <FontAwesomeIcon className='on' onClick={switchTheme} icon={faToggleOn}/>
                 </div>
         </div>
+        </>
     );
 }
 

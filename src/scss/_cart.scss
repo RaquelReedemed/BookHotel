@@ -1,3 +1,34 @@
+.contTituloReserva{
+    display: flex;
+    justify-content: center;
+    margin-top: 30px;
+}
+
+.contTituloReserva h1{
+    color: #1ebbce;
+}
+
+.contTotalPagar{
+    display: flex;
+    justify-content: flex-end;
+    margin-right: 20px;
+}
+
+.contCheck .btn{
+ 
+  height: 38px;
+  border-color: black;
+}
+
+
+
+.contCheck{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-left: 20px;
+    margin-right: 20px;
+}
 
 .contImg{
     width: 300px;
@@ -11,7 +42,7 @@
 .cardCarrito {
     width: 400px;
     overflow: hidden;
-    
+
 }
 
 .cardCarrito header{
@@ -116,6 +147,33 @@
     opacity: 1;
     transform: translateY(30px);
     transition-duration: .3s;
+}
+
+
+/* boton vaciar carrito */
+
+.buttonVaciar {
+//    padding: 17px 40px;
+ border-radius: 10px;
+ border: 0;
+ background-color: rgb(255, 56, 86);
+ letter-spacing: 1.5px;
+ font-size: 10px;
+ transition: all .3s ease;
+// box-shadow: rgb(201, 46, 70) 0px 10px 0px 0px;
+ color: hsl(0, 0%, 100%);
+}
+
+.buttonVaciar:hover{
+    box-shadow: rgb(201, 46, 70) 0px 7px 0px 0px;  
+}
+
+.buttonVaciar:active{
+    background-color: rgb(255, 56, 86);
+    /*50, 168, 80*/
+    box-shadow: rgb(201, 46, 70) 0px 0px 0px 0px;
+    transform: translateY(5px);
+    transition: 200ms;
 }
 
 

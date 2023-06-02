@@ -16,7 +16,7 @@ const ItemCount = ({stock, cantidad, setCantidad, agregar }) => {
     
     return (
       <div>
-      <h4>Seleccione cantidad de personas</h4>
+      <h4 className="dark">Seleccione cantidad de personas</h4>
         <div className="wrapper">
          
          <span 

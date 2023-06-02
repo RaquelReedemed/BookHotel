@@ -75,7 +75,7 @@ export const Navbar = () => {
     
 
       <ul className="nav_ul">
-        <li className="nav_item">Contactanos</li>
+        <Link className="nav_item">Contactanos</Link>
         <li className="cart">
         {
           cart.length > 0 && <CartWidget/>
@@ -163,41 +163,3 @@ library.add(faBars,
             faToggleOff,
             faMoon,
            faSun);
-
-{
-  /*  <li className='nav_item'>Habitaciones con Balcon</li>
-                <li className='nav_item'>Habitaciones Panoramicas</li>
-                <li className='nav_item'>Habitaciones Presidenciales</li> */
-}
-
-
-  {/*    <div className="dropdown">
-            <ul>
-              <li>
-                Habitaciones
-                <ul className="menu-vertical">
-                  <li>
-                    <Link href="#/action-1">Balcon</Link>
-                  </li>
-                  <li>
-                    <Link href="#/action-2">Panoramica</Link>
-                  </li>
-                  <li>
-                    <Link href="#/action-2">Presidencial</Link>
-                  </li>
-                </ul>
-              </li>
-            </ul>
-          </div> */}
-
-      {/*     <Dropdown>
-      <Dropdown.Toggle variant="success" id="dropdown-basic">
-        Habitaciones
-      </Dropdown.Toggle>
-      <Dropdown.Menu>
-         <Link href="#/action-1">Balcon</Link>
-        <Link  href="#/action-2">Panoramica</Link>
-        <Link  href="#/action-2">Presidencial</Link>
-       <Dropdown.Item href="#/action-3">Presidencial</Dropdown.Item> 
-      </Dropdown.Menu>
-    </Dropdown>   */}

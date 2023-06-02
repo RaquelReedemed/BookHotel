@@ -2,12 +2,6 @@ import { createContext, useState, useEffect } from "react";
 
 
 
-    const darkMode = {
-        body: '#1c1c1c',
-    };
-
-    
-
 export const DarkModeContext = createContext()
 
 export const DarkModeProvider = ({children}) => {
@@ -17,11 +11,12 @@ export const DarkModeProvider = ({children}) => {
 
      useEffect(() => {
        if (darkMode) {
-        document.body.classList.add('dark');
+        document.body.classList.add('dark')
+        
        }else {
-        document.body.classList.remove('dark')
+        document.body.classList.remove('dark');
        }
-     }, [darkMode]);
+     }, [darkMode]); 
 
      const changeMode = () => {
         setDarkMode(!darkMode)
@@ -33,8 +28,9 @@ export const DarkModeProvider = ({children}) => {
         <DarkModeContext.Provider value={{
             darkMode,
            changeMode
-        }}>
+        }}>   
           {children}
+         
         </DarkModeContext.Provider>
     )
 }

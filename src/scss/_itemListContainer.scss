@@ -47,7 +47,7 @@
 }
 
 .card-image .img-fluid{
-    max-width: 100%;
+    width: 100%;
     height: auto;
 }
 
@@ -118,11 +118,15 @@
       }
 }
 
-@media (min-width: 470px) {
+ @media (min-width: 768px) {
     .grid-container { 
        grid-template-columns: 1fr 1fr;
       }
-}
+
+    .lista .container{
+        width: 669px;
+    }  
+} 
 
 @media (min-width: 970px) {
     .grid-container { 

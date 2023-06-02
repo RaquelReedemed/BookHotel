@@ -20,6 +20,10 @@ import SelectFecha from "../SelectFecha.jsx/SelectFecha";
 import { CartContext } from "../../context/CartContext";
 import TerminarPago from "../TerminarPago/TerminarPago";
 import { format } from "date-fns";
+import { DarkModeContext } from "../../context/DarkModeContext";
+
+
+
 
 
 /* const fechas =[
@@ -42,6 +46,11 @@ import { format } from "date-fns";
 ] */
 
 const ItemDetail = ({itemData}) => {
+
+  const { darkMode } = useContext(DarkModeContext)
+
+
+
 
   /* uso del setCart del app.js para poder modificar el estado */
   const { agregarAlCarrito, isInCart } = useContext(CartContext)
@@ -110,12 +119,12 @@ useEffect(() => {
 
     <header>
       <div className="containerTitulo">
-        <h1 className="green">{itemData.name}</h1>
+        <h1  className={darkMode ? 'dark-modeH1': 'green'}>{itemData.name}</h1>
       </div>
     </header>
 
 
-    <div className="containerImagen">
+    <div className="containerTitulo">
     <img className="img-fluid" src={itemData.img}></img>
     </div>
 

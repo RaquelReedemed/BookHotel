@@ -114,9 +114,9 @@ export const ItemListContainer = () => {
               </div>
             </li>
             <li className="li-iconos">
-              <div>
+             {/*  <div>
                 <FontAwesomeIcon icon={faTv} /> Televisor
-              </div>
+              </div> */}
               <div>
                 <FontAwesomeIcon icon={faWind} /> Aire Acondicionado
               </div>

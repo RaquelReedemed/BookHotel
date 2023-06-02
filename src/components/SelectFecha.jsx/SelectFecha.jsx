@@ -50,7 +50,7 @@ const SelectFecha = ({options, price, setTotalPrice, totalPrice, startDate, setS
   return (
     <div className="contSeleccionador">
 
-      <h4>Seleccione fechas</h4>
+      <h4 className="dark">Seleccione fechas</h4>
 
     <ReactDatePicker
       selectsRange={true}

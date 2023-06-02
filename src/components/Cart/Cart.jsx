@@ -24,9 +24,16 @@ const Cart = () => {
   }
 
   return (
-    <div>
-    <h2>Tu reserva</h2>
+    <div className="contReserva">
+
+    <div className="contTituloReserva">
+    <h1>Tu reserva</h1>
+
+    </div>
+    
     <hr />
+
+     <div className="gridItems">
 
      
       <div className="grid-container">  
@@ -64,45 +71,32 @@ const Cart = () => {
             ))
         }
 
-
-
-
-      {/*   {
-            cart.map((item) => (
-          <div key={item.id} className="card">
-            <div lassName="card-image">
-              <img className="img-fluid" src={item.img}></img>
-            </div>
-
-            <div className="card-body">
-              <h3>{item.name}</h3>
-              <p>Check-IN: {item.formattedCheckIN} Check-Out {item.formattedCkeckOUT}</p>
-              <p>Cantidad: {item.cantidad} personas</p>
-              <p>Subtotal: {item.price * item.cantidad}</p>
-              <p>Total: {item.totalFinal}</p>
-            </div>
-
-            <div className="contNavCart">
-              <button
-                onClick={() => removeItem(item.id)}
-                className="btn btn-danger"
-              >
-                <FontAwesomeIcon icon={faTrash} />
-              </button>
-            </div>
-
-          </div>
-        ))} */}
       </div> {/* fin grid */}
 
+      </div>
+
+
+      <div className="contTotalPagar">
       <h3>Total a pagar: ${totalCarrito()}</h3>
+      </div>
+     
         <hr />
-        <button onClick={emptyCart} className="btn btn-danger">
+
+        <div className="contCheck">
+
+        <button 
+          onClick={emptyCart} 
+          className="buttonVaciar">
           Vaciar carrito
         </button>
-        <Link to="/checkout" className="btn btn-success">
+
+        <div className="btn btn-light">
+        <Link to="/checkout"  className="terminarCompra">
           Terminar mi compra
         </Link>
+        </div>
+        
+        </div>
     </div>
   );
 };

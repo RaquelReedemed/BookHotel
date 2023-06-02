@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useContext } from 'react';
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { library } from "@fortawesome/fontawesome-svg-core";
 import {
@@ -13,6 +13,7 @@ import {
 import { Description } from "@mui/icons-material";
 import { useState, useEffect } from "react";
 
+
 /* import { pedirDatos } from "../../helpers/pedirDatos"; */
 import ItemList from "../ItemList/ItemList";
 
@@ -22,16 +23,20 @@ import Loader from "../Loader/Loader";
 import { useParams } from "react-router-dom";
 import { collection, doc, getDocs, query, where } from "firebase/firestore"; /*para armar la referencia, "getDocs" en plural para traer una coleccion  */
 import { db } from "../../firebase/config";
+import ItemListCatego from '../Categorias/ItemListCatego';
+import { DarkModeContext } from '../../context/DarkModeContext';
 
 
 
 
 export const ItemListId = () => {
+  
+  const { darkMode } = useContext(DarkModeContext)
 
 
    const [productos, setProductos] = useState([]); 
    const [loading, setloading] = useState(true); 
-   console.log(productos); 
+   console.log('productos', productos); 
 
   const { categoryId } = useParams()
   console.log(categoryId)
@@ -69,18 +74,27 @@ export const ItemListId = () => {
 
   return (
     <div className="lista">
-      
+
+    <div className='containerTitulo'>
+
+     {
+      productos.map((data) => (
+        <h1 className={darkMode ? 'dark-modeH1': 'green'}>{data.nameCatego}</h1>
+      ))
+     }
+     </div>
+   
       <div>
        {
         loading
         ? 
         <Loader cargando={LoaderDisenio}/>
         :
-        <ItemList items={productos}/>
+        <ItemListCatego items={productos}/>
       } 
       </div>
-      
-      
+
+     
       {/* fin grid-container */}
     </div>
   );

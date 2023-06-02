@@ -2,9 +2,12 @@ import ShoppingCartIcon from "@mui/icons-material/ShoppingCart";
 import { red } from "@mui/material/colors";
 import { Link } from "react-router-dom";
 
-const ItemCard = ( {itemData} ) => {
+const ItemCardCatego = ( {itemData} ) => {
   return (
-    
+
+    <div>
+
+ 
       <div className="card">
 
         <div className="card-image">
@@ -24,8 +27,10 @@ const ItemCard = ( {itemData} ) => {
         </div>
         
       </div>
+
+      </div>
     
   );
 };
 
-export default ItemCard;
+export default ItemCardCatego;
