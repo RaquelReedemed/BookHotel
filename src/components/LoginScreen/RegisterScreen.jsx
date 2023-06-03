@@ -64,7 +64,6 @@ const RegisterScreen = () => {
                
           </div>
             
-           <p className='divider'><span>Or</span></p>
               <form onSubmit={handleSubmit}>
               <label>Email</label>
                 <input 
