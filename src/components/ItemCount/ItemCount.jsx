@@ -1,6 +1,10 @@
+import { useContext } from "react"
+import { DarkModeContext } from "../../context/DarkModeContext"
 
 
 const ItemCount = ({stock, cantidad, setCantidad, agregar }) => {
+
+   const { darkMode } = useContext(DarkModeContext)
 
     
 
@@ -16,7 +20,7 @@ const ItemCount = ({stock, cantidad, setCantidad, agregar }) => {
     
     return (
       <div>
-      <h4 className="dark">Seleccione cantidad de personas</h4>
+      <h4 className={darkMode ? 'dark-modeH3': 'h3Body'}>Seleccione cantidad de personas</h4>
         <div className="wrapper">
          
          <span 

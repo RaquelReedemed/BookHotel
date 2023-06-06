@@ -25,6 +25,8 @@ import { collection, doc, getDocs, query, where } from "firebase/firestore"; /*p
 import { db } from "../../firebase/config";
 import ItemListCatego from '../Categorias/ItemListCatego';
 import { DarkModeContext } from '../../context/DarkModeContext';
+import LoaderDisenio2 from '../Loader/LoaderDisenio2';
+import LoaderDisenio3 from '../Loader/LoaderDisenio3';
 
 
 
@@ -33,13 +35,15 @@ export const ItemListId = () => {
   
   const { darkMode } = useContext(DarkModeContext)
 
+  
+
 
    const [productos, setProductos] = useState([]); 
    const [loading, setloading] = useState(true); 
    console.log('productos', productos); 
 
   const { categoryId } = useParams()
-  console.log(categoryId)
+  console.log('categoryId', categoryId)
 
      useEffect(() => {
       setloading(true)
@@ -71,24 +75,36 @@ export const ItemListId = () => {
   }, [categoryId]);  
 
 
+  /* transformando categoryId en mayuscula */
+
+  const categoryIdMayuscula = categoryId.toUpperCase();
+
+
 
   return (
     <div className="lista">
 
     <div className='containerTitulo'>
 
-     {
+      {/* {
       productos.map((data) => (
         <h1 className={darkMode ? 'dark-modeH1': 'green'}>{data.nameCatego}</h1>
       ))
-     }
+     }  */}
+
+     <div className='containerTitulo'>
+      <h1 className='green'>Habitaciones de tipo: {categoryId}</h1>
+
+     </div>
+
+    
      </div>
    
       <div>
        {
         loading
         ? 
-        <Loader cargando={LoaderDisenio}/>
+        <Loader cargando={LoaderDisenio3}/>
         :
         <ItemListCatego items={productos}/>
       } 

@@ -1,209 +1,38 @@
-import ShoppingCartIcon from '@mui/icons-material/ShoppingCart';
-import { Link } from 'react-router-dom';
-import { useContext } from 'react';
-import { CartContext } from '../../context/CartContext';
-
-export const CartWidget = () => {
-
-    const { cart, totalCantidad } = useContext(CartContext)
-    console.log('numerito', totalCantidad)
-
-    return(
-        <Link to="/cart" className={`cart-widget ${cart.length > 0 ? 'cart-widget-active' : ''}`}>
-        <ShoppingCartIcon/>
-        <span>{totalCantidad()}</span>
-        </Link>
-    )
-}
 
 
-const MOCK_DATA = [
-  {
-    id: 1,
-    name: "Habitacion con balcon-standar",
-    description:
-      "Disfrute de todas las comodidades en nuestras habitaciones económicas",
-    price: 15000,
-    category: "balcon",
-    stock:20,
-    dates: ["2023-06-01", "2023-06-02", "2023-06-03"]  
-    stockPorDia: ["2023-06-01:2","2023-06-02:2","2023-06-03:2" ]
-  }]
-
-
-
-  item.transformedStock.forEach(stockString => { /*se itera cada elemento del array */
-            const [date, stock] = stockString.split(":");/*se divide cada elemento en fecha:cantidad  */
- 
-            getDoc(itemRef).then((doc) => {/*se consulta a la db para obtener el doc */
-                if (doc.data().stock >= parseInt(stock)) {/*se verifica si hay stock */
-                    updateDoc(itemRef, { 
-                        stock: doc.data().stock - parseInt(stock)
-                    });
-                }else {
-                    alert('no hay stock de ' + item.name + ' para la fecha ' + date);
-                }
-            })
-        })
-
-
-        import React, { useContext } from 'react';
-import { useState } from 'react';
-import { Link } from 'react-router-dom';
-import { AuthContext } from '../../context/AuthContext';
-
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { library } from "@fortawesome/fontawesome-svg-core";
-import { faEnvelope } from '@fortawesome/free-solid-svg-icons';
-
-
-const LoginScreen = () => {
-  
-   const { login, loginWithGoogle } = useContext(AuthContext)
-
-    const [values, setValues] = useState({
-        email: "",
-        password: ""
-    });
-
-    const handleInput = (e) => {
-         setValues({
-           ...values,
-           [e.target.name]: e.target.value
-         })
-    }
-
-    const handleSubmit = (e) => {
-      e.preventDefault()
-      
-      login(values)
-      console.log(values)
-      console.log(login)
-    }
-
-
-    return (
-        <div>
-        <div className='login'>
-           <h1>Login</h1>
-         <div className='container'>
-            <div>
-            <FontAwesomeIcon icon={faEnvelope}/> 
-            </div>
-             
-  
-           
-           <p className='divider'><span>Or</span></p>
-              <form onSubmit={handleSubmit}>
-              <label>Email</label>
-                <input 
+ <form onSubmit={handleSubmit}>
+                <input
+               // onChange={handleNombre} 
+                name='nombre'
+                value={values.nombre}
+                onChange={handleInputChange}
+                className='form-control my-2' 
+                type='text'
+                placeholder='Tu nombre'
+                />
+                 <input 
+               // onChange={handleEmail} 
+                name='email'
                 value={values.email}
-                type="email" 
-                className="form-control my-2" 
-                placeholder="Email"
-                name="email"
-                onChange={handleInput}>
-                </input>
-              <label>Password</label>
+                onChange={handleInputChange}
+                className='form-control my-2' 
+                type='text'
+                placeholder='Email'
+                />
                 <input 
-                value={values.password}
-                type="password" 
-                className="form-control my-2" 
-                placeholder="Contrasenia"
-                name="password"
-                onChange={handleInput}>
-                </input>
-                <button type="submit">Log In</button>
-                <Link to="/register">Registrarme</Link>
-            </form> 
-
-           
-           
-            <hr/>
-      
-           
-                <button className="btn btn-primary" type="submit" onClick={loginWithGoogle}>Ingresar con Google</button>
-                  
-         </div>    
-        </div>
-        </div>
-    );
-}
-
-export default LoginScreen;
-
-
-library.add(
-  faEnvelope
-)
-
-
-
-/* import React, { useContext } from 'react';
-import { useState } from 'react';
-import { Link } from 'react-router-dom';
-import { AuthContext } from '../../context/AuthContext';
-
-
-const RegisterScreen = () => {
-     
-    const { register } = useContext(AuthContext)
-
-    const [values, setValues] = useState({
-        email: "",
-        password: ""
-    });
-
-    const handleInput = (e) => {
-         setValues({
-           ...values,
-           [e.target.name]: e.target.value
-         })
-    }
-
-    const handleSubmit = (e) => {
-      e.preventDefault()
-
-      register(values)
-    }
-
-
-    return (
-        <div className='login'>
-         <div className='login-container'>
-            <h2>Registrarme</h2>
-            <hr/>
-
-            <form onSubmit={handleSubmit}>
-                <input 
-                value={values.email}
-                type="email" 
-                className="form-control my-2" 
-                placeholder="Email"
-                name="email"
-                onChange={handleInput}>
-                </input>
-
-                <input 
-                value={values.password}
-                type="password" 
-                className="form-control my-2" 
-                placeholder="Contrasenia"
-                name="password"
-                onChange={handleInput}>
-                </input>
-                <button className="btn btn-primary" type="submit">Registrarme</button>
-                <Link to="/login">Ya estoy registrado, iniciar secion</Link>
+               // onChange={handleDireccion}
+                name='direccion'
+                value={values.direccion}
+                onChange={handleInputChange}
+                className='form-control my-2' 
+                type='text'
+                placeholder='Direccion'
+                />
+                <button 
+                className='btn btn-primary' 
+                type='submit'>Enviar</button>
             </form>
-         </div>    
-        </div>
-    );
-}
-
-export default RegisterScreen;
- */
 
 
 
-
-
+            

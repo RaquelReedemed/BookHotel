@@ -14,7 +14,7 @@ import Contacto from '../Contacto/Contacto';
 import Cart from '../Cart/Cart';
 import Checkout from '../Checkout/Checkout';
 import { ItemListId } from '../ItemListId.jsx/ItemListId';
-import CargaLogin from '../CargaLogin/CargaLogin';
+
 
 
 const AppRouter = () => {
@@ -36,9 +36,8 @@ const AppRouter = () => {
       <Route path="/cart" element={<Cart/>}/>
       <Route path='/checkout' element={<Checkout/>}/>
       <Route path="/contacto" element={<Contacto/>}/>
-          <Route path="*" element={<Error404/>}></Route>    
-       <Route path="/carga" element={<CargaLogin/>}></Route>
-        {/*  */}<Route path='*' element={<Navigate to={"/"}/>}/> 
+     <Route path="*" element={<Error404/>}></Route>    
+     {/*  <Route path='*' element={<Navigate to={"/"}/>}/>  */}
      </Routes>
       </>
       :
@@ -47,7 +46,7 @@ const AppRouter = () => {
         <Route path="/login" element={<LoginScreen/>}/>
         <Route path="/register" element={<RegisterScreen/>}/>
           <Route path="*" element={<Navigate to="/login"/>}></Route>  
-          <Route path="/carga" element={<CargaLogin/>}></Route>
+          
       </Routes>
     }
         </BrowserRouter>

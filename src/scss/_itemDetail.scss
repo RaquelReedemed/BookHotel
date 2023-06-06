@@ -28,12 +28,12 @@
     padding-left: 15px;
 }
 
-.contenedorDescripcion h2{
+.contenedorDescripcion .h2Desc{
     color: #363a40;
     margin-bottom: 1.5rem;
 }
 
-.contenedorDescripcion p{
+.contenedorDescripcion .pDesc{
     margin-bottom: 3rem;
     color: #666a72;
 }
@@ -58,6 +58,12 @@
 .contenedorAmenities .listaAmenities .listaBody{
     margin-left: 1rem;
 }
+
+.listaBody .h3Body{
+    color: #363a40;
+    font: italic 700 1.5rem/2.25rem "PT Serif", serif;
+}
+
 
 
 /* boton reservar */

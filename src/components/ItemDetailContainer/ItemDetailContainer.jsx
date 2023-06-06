@@ -6,6 +6,7 @@ import { useParams } from 'react-router-dom'
 import ItemList from '../ItemList/ItemList.jsx'
 import ItemDetail from '../ItemDetail/ItemDetail.jsx'
 import LoaderDisenio from '../Loader/LoaderDisenio.jsx'
+import LoaderDisenio3 from '../Loader/LoaderDisenio3.jsx'
 import Loader from '../Loader/Loader.jsx'
 import { doc, getDoc } from 'firebase/firestore' /* para armar la ref a un documento, "getDoc" en singular es para traer 1 solo documento */
 import { db } from '../../firebase/config.js'
@@ -51,7 +52,7 @@ const ItemDetailContainer = () => {
     <div>
          {
             loading
-              ? <Loader cargando={LoaderDisenio}/>
+              ? <Loader cargando={LoaderDisenio3}/>
               : <ItemDetail itemData={item}/>
         } 
     </div>

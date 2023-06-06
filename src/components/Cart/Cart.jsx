@@ -6,9 +6,12 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { library } from "@fortawesome/fontawesome-svg-core";
 import { faTrash } from "@fortawesome/free-solid-svg-icons";
 import { Link } from "react-router-dom";
+import { DarkModeContext } from "../../context/DarkModeContext";
 
 const Cart = () => {
   const { cart, emptyCart, totalCarrito, removeItem } = useContext(CartContext);
+
+  const { darkMode } = useContext(DarkModeContext)
 
 
   if (cart.length === 0) {
@@ -77,7 +80,7 @@ const Cart = () => {
 
 
       <div className="contTotalPagar">
-      <h3>Total a pagar: ${totalCarrito()}</h3>
+      <h3 className={darkMode ? 'dark-modeH3': 'h3Body'} >Total a pagar: ${totalCarrito()}</h3>
       </div>
      
         <hr />
@@ -90,8 +93,8 @@ const Cart = () => {
           Vaciar carrito
         </button>
 
-        <div className="btn btn-light">
-        <Link to="/checkout"  className="terminarCompra">
+        <div >
+        <Link to="/checkout" className="buttonTerminarCompra">
           Terminar mi compra
         </Link>
         </div>

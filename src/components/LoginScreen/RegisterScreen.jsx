@@ -64,9 +64,10 @@ const RegisterScreen = () => {
                
           </div>
             
-              <form onSubmit={handleSubmit}>
-              <label>Email</label>
+              <form className='formLog' onSubmit={handleSubmit}>
+              <label className='labelLog'>Email</label>
                 <input 
+                className='inputLog'
                 value={values.email}
                 type="email" 
                // className="form-control my-2" 
@@ -76,6 +77,7 @@ const RegisterScreen = () => {
                 </input>
               <label>Password</label>
                 <input 
+                className='inputLog'
                 value={values.password}
                 type="password" 
             //    className="form-control my-2" 
@@ -85,16 +87,13 @@ const RegisterScreen = () => {
                 </input>
 
                 
-                 <button type="submit">Registrarme</button>
+                 <button className='buttonLog' type="submit">Registrarme</button>
                 
 
                 <div className='bottom'>
                  <Link className='create' to="/login">Ya estoy resgistrado</Link>
                 </div>     
-            </form> 
-
-           
-           
+            </form>    
             <hr/>
             
            

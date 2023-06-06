@@ -57,9 +57,7 @@ const LoginScreen = () => {
     return (
 
       <>
-        {
-          navi && <Navigate to="carga"/>
-        }
+       
         <div className='pagLogin' data-theme={theme}>
         <div className='login'>
            <h1>Login</h1>
@@ -92,9 +90,10 @@ const LoginScreen = () => {
           </div>
             
            <p className='divider'><span>Or</span></p>
-              <form onSubmit={handleSubmit}>
-              <label>Email</label>
+              <form className='formLog' onSubmit={handleSubmit}>
+              <label className='labelLog'>Email</label>
                 <input 
+                className='inputLog'
                 value={values.email}
                 type="email" 
                // className="form-control my-2" 
@@ -104,6 +103,7 @@ const LoginScreen = () => {
                 </input>
               <label>Password</label>
                 <input 
+                className='inputLog'
                 value={values.password}
                 type="password" 
             //    className="form-control my-2" 
@@ -113,7 +113,7 @@ const LoginScreen = () => {
                 </input>
 
                 
-                 <button type="submit">Log In</button>
+                 <button className='buttonLog' type="submit">Log In</button>
                 
 
                 <div className='bottom'>
@@ -131,7 +131,7 @@ const LoginScreen = () => {
          </div>    
         </div>
         <div className='theme-toggle'>
-                   <h2>Light Theme</h2>
+                   <h2 className='h2Log'>Light Theme</h2>
                    <FontAwesomeIcon className='on' onClick={switchTheme} icon={faToggleOn}/>
         </div>
         </div>

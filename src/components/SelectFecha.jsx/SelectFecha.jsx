@@ -4,8 +4,12 @@ import ReactDatePicker from "react-datepicker";
 import 'react-datepicker/dist/react-datepicker.css';
 import { parseISO, format } from "date-fns";
 import { differenceInDays } from "date-fns";
+import { useContext } from "react";
+import { DarkModeContext } from "../../context/DarkModeContext";
 
 const SelectFecha = ({options, price, setTotalPrice, totalPrice, startDate, setStartDate, endDate, setEndDate, transformedStock}) => {
+  
+   const { darkMode } = useContext(DarkModeContext) 
 
   const dates = options.fechasDisponibles
   console.log('fechasDisponibles', dates)
@@ -50,7 +54,7 @@ const SelectFecha = ({options, price, setTotalPrice, totalPrice, startDate, setS
   return (
     <div className="contSeleccionador">
 
-      <h4 className="dark">Seleccione fechas</h4>
+      <h4  className={darkMode ? 'dark-modeH3': 'h3Body'}>Seleccione fechas</h4>
 
     <ReactDatePicker
       selectsRange={true}

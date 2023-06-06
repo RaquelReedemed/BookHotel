@@ -129,9 +129,9 @@ useEffect(() => {
     </div>
 
     <div className="contenedorDescripcion">
-      <h2>Descripcion</h2>
-      <p>{itemData.description}</p>
-      <p><strong>Precio: ${itemData.price} P/dia 1 persona</strong></p>
+      <h2 className={darkMode ? 'dark-modeH2Desc': 'h2Desc'}>Descripcion</h2>
+      <p className={darkMode ? 'dark-modeP': 'pDesc'}>{itemData.description}</p>
+      <p className={darkMode ? 'dark-modeP': 'pDesc'}><strong>Precio: ${itemData.price} P/dia 1 persona</strong></p>
     </div>
 
     <div className="contenedorAmenities">
@@ -142,8 +142,8 @@ useEffect(() => {
           <FontAwesomeIcon icon={faShower} />
           </div>
           <div className="listaBody">
-            <h3>{itemData.detailTitle1}</h3>
-            <p>{itemData.descDetail1}</p>
+            <h3 className={darkMode ? 'dark-modeH3': 'h3Body'}>{itemData.detailTitle1}</h3>
+            <p className={darkMode ? 'dark-modeP': ''}>{itemData.descDetail1}</p>
           </div>
         </li>
 
@@ -152,8 +152,8 @@ useEffect(() => {
         <FontAwesomeIcon icon={faTv} />
           </div>
           <div className="listaBody">
-            <h3>{itemData.detailTitle2}</h3>
-            <p>{itemData.descDetail2}</p>
+            <h3 className={darkMode ? 'dark-modeH3': 'h3Body'}>{itemData.detailTitle2}</h3>
+            <p className={darkMode ? 'dark-modeP': ''}>{itemData.descDetail2}</p>
           </div>
         </li>
 
@@ -162,8 +162,8 @@ useEffect(() => {
         <FontAwesomeIcon icon={faSnowflake} />
           </div>
           <div className="listaBody">
-            <h3>{itemData.detailTitle3}</h3>
-            <p>{itemData.descDetail3}</p>
+            <h3 className={darkMode ? 'dark-modeH3': 'h3Body'}>{itemData.detailTitle3}</h3>
+            <p className={darkMode ? 'dark-modeP': ''}>{itemData.descDetail3}</p>
           </div>
         </li>
 
@@ -220,9 +220,9 @@ useEffect(() => {
        {
     totalFinal !== itemData.price 
     ?
-    <h2>Subtotal:{totalFinal}</h2>
+    <h2 className={darkMode ? 'dark-modeH3': 'h3Body'}>Subtotal:{totalFinal}</h2>
     :
-    <h2>Subtotal: 0</h2>
+    <h2 className={darkMode ? 'dark-modeH3': 'h3Body'}>Subtotal: 0</h2>
    }
        </div>
     

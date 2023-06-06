@@ -52,14 +52,14 @@ export const Navbar = () => {
           <Link to="/">Inicio</Link>
         </li>
          <li className="nav_item">
-          <Link to="/habitaciones/balcon">Balcon</Link>
+          <Link to="/habitaciones/Balcon">Balcon</Link>
         </li> 
         <li className="nav_item">
-          <Link to="/habitaciones/panoramica">Panoramica</Link>
+          <Link to="/habitaciones/Panoramica">Panoramica</Link>
         </li>
         <li className="nav_item">
           {" "}
-          <Link to="/habitaciones/presidencial">Presidencial</Link>
+          <Link to="/habitaciones/Presidenciales">Presidencial</Link>
         </li>
         <li className="nav_item">
         <Link>{darkMode 
@@ -75,7 +75,7 @@ export const Navbar = () => {
     
 
       <ul className="nav_ul">
-        <Link className="nav_item">Contactanos</Link>
+        <Link to="/contacto" className="nav_item">Contactanos</Link>
         <li className="cart">
         {
           cart.length > 0 && <CartWidget/>
@@ -128,15 +128,15 @@ export const Navbar = () => {
         <ul>
 
           <li onClick={navHamb}>
-          <Link to="/habitaciones/balcon">Habitacion con Balcon</Link>
+          <Link to="/habitaciones/Balcon">Habitacion con Balcon</Link>
           </li>
 
           <li onClick={navHamb}>
-          <Link to="/habitaciones/panoramica">Habitacion Panoramica</Link>
+          <Link to="/habitaciones/Panoramica">Habitacion Panoramica</Link>
         </li>
          
           <li onClick={navHamb}>
-          <Link to="/habitaciones/presidencial">Habitacion Presidencial</Link>
+          <Link to="/habitaciones/presidenciales">Habitacion Presidencial</Link>
           </li>
 
           <li onClick={navHamb}>

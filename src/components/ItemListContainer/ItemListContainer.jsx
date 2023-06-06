@@ -15,12 +15,15 @@ import { useState, useEffect } from "react";
 /* import { pedirDatos } from "../../helpers/pedirDatos"; */
 import ItemList from "../ItemList/ItemList";
 
-import LoaderDisenio from "../../components/Loader/LoaderDisenio"
+ import LoaderDisenio from "../../components/Loader/LoaderDisenio" 
+import LoaderDisenio2 from "../../components/Loader/LoaderDisenio2"
+import LoaderDisenio3 from "../../components/Loader/LoaderDisenio3"
 import Loader from "../Loader/Loader";
 /* import { useProductos } from "../../hooks/useProductos"; */
 import { useParams } from "react-router-dom";
 import { collection, doc, getDocs, query, where } from "firebase/firestore"; /*para armar la referencia, "getDocs" en plural para traer una coleccion  */
 import { db } from "../../firebase/config";
+
 
 
 
@@ -133,7 +136,7 @@ export const ItemListContainer = () => {
        {
         loading
         ? 
-        <Loader cargando={LoaderDisenio}/>
+        <Loader cargando={LoaderDisenio3}/>
         :
         <ItemList items={productos}/>
       } 
