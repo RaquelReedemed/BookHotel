@@ -2,7 +2,8 @@
 
 import React from 'react'
 /* import { DisenioErrorLetras } from './DisenioError404letras' */
-import DisenioError404letras from './DisenioError404letras'
+/* import DisenioError404letras from './DisenioError404letras' */
+import DisenioEspera from './DisenioEspera'
 
 
 const  Error404 = () => {
@@ -11,7 +12,8 @@ const  Error404 = () => {
   return (
     <div>
 
-    <DisenioError404letras/>
+   {/*  <DisenioError404letras/> */}
+   <DisenioEspera/>
 
 
     </div>
