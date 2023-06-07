@@ -665,6 +665,18 @@ body.dark {
   margin-top: 30px;
 }
 
+@media (min-width: 375px) {
+  .contCheck {
+    margin-left: 0px;
+    margin-right: 0px;
+  }
+}
+@media (min-width: 425px) {
+  .contCheck {
+    margin-left: 20px;
+    margin-right: 20px;
+  }
+}
 .cart-widget {
   visibility: hidden; /* mantiene su espacio en el docuemnto a diferencia de display:none */
 }
@@ -1218,6 +1230,12 @@ body.dark {
   box-shadow: inset 4px 4px 4px rgba(165, 163, 163, 0.315), 4px 4px 4px rgba(218, 218, 218, 0.13);
 }
 
+@media (min-width: 375px) {
+  .containerCont {
+    margin-left: 0;
+    margin-right: 0;
+  }
+}
 @media (min-width: 425px) {
   .containerCont {
     margin-left: 15px;
@@ -1234,6 +1252,12 @@ body.dark {
   .containerCont {
     margin-left: 5rem;
     margin-right: 5rem;
+  }
+}
+@media (min-width: 1024px) {
+  .containerCont {
+    margin-left: 7rem;
+    margin-right: 7rem;
   }
 }
 .contFinOrden {
