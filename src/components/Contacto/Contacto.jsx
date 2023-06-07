@@ -2,6 +2,7 @@
 import React, { useContext } from 'react';
 import { useState } from 'react';
 import { DarkModeContext } from '../../context/DarkModeContext';
+import Swal from 'sweetalert2';
 
 const Contacto = () => {
 
@@ -30,7 +31,30 @@ const Contacto = () => {
         e.preventDefault()
         console.log("submit")
         console.log(values)
-        
+
+        const { nombre, direccion, email } = values 
+          if(nombre.length <3) {
+            Swal.fire(
+                "Nombre invalido"
+            )
+          }
+
+           if(email.length <5) {
+            Swal.fire(
+                "Introduzca un mail valido"
+            )
+          } else {
+            Swal.fire(
+                "Mensaje enviado con exito"
+            )
+
+            //reseteando los inputs
+            setValues({
+                nombre: "",
+                email: "",
+                direccion: ""
+            });
+          } 
        }
   
 

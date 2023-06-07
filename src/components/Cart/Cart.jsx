@@ -17,11 +17,19 @@ const Cart = () => {
   if (cart.length === 0) {
     return (
       <div>
-        <h2>Tu carrito esta vacio</h2>
+
+      <div className='contTituloReserva'>
+      <h1 className={darkMode ? 'dark-modeH3': ''}>Tu carrito esta vacio</h1>
         <hr />
-        <Link to="/" className="btn btn-primary">
+      </div>
+        
+        <div className="contBtnIrAlInicio">
+        <Link to="/" className="btn btn-light">
           Ir al inicio
         </Link>
+
+        </div>
+        
       </div>
     );
   }
